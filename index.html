@@ -1088,8 +1088,8 @@ footer .container { display: flex; justify-content: space-between; align-items: 
       <span class="t-en">Every project started with "what's actually needed?" — and only then with code.</span>
     </div>
 
-    <!-- Featured case -->
-    <div style="margin-bottom: 28px;">
+    <!-- Featured case (temporarily hidden) -->
+    <div style="margin-bottom: 28px; display: none;">
       <div class="case-card case-card--featured" id="case-aimother">
 
         <!-- Tag + Title -->
@@ -1502,226 +1502,18 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         </div>
       </div>
 
-      <div class="cases-more-cards" id="cases-more" style="display:none;contents:unset;">
-
-      <div class="case-card" id="case-unlim">
-        <div class="case-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-        </div>
-        <div class="case-tag">AI · Telegram · <a href="https://t.me/UnlimitChatGPTbot" style="color:var(--blue);text-decoration:none;">@UnlimitChatGPTbot</a></div>
-        <div class="case-title t-ru">Бесплатный AI-чат в Telegram</div>
-        <div class="case-title t-sr">Besplatni AI chat u Telegramu</div>
-        <div class="case-title t-en">Free AI chat in Telegram</div>
-        <div class="case-desc">
-          <span class="t-ru">Telegram-бот с GPT, который работает бесплатно и без регистрации. Память диалога, shortcut-кнопки с вариантами ответа, premium-режим с GPT-4.1. Монетизация через Telegram Stars и подписку на каналы.</span>
-          <span class="t-sr">Telegram bot sa GPT-om koji radi besplatno i bez registracije. Memorija dijaloga, shortcut dugmad, premium režim sa GPT-4.1. Monetizacija kroz Telegram Stars.</span>
-          <span class="t-en">A Telegram bot with GPT that works for free, no sign-up needed. Dialogue memory, shortcut buttons with reply options, premium mode with GPT-4.1. Monetized via Telegram Stars and channel subscriptions.</span>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric">
-            <div class="case-metric-val">1 100+</div>
-            <div class="case-metric-label t-ru">пользователей</div>
-            <div class="case-metric-label t-sr">korisnika</div>
-            <div class="case-metric-label t-en">users</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val">GPT-4.1</div>
-            <div class="case-metric-label t-ru">premium-модель</div>
-            <div class="case-metric-label t-sr">premium model</div>
-            <div class="case-metric-label t-en">premium model</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val t-ru">0 &#8381;</div>
-            <div class="case-metric-val t-sr">$0</div>
-            <div class="case-metric-val t-en">$0</div>
-            <div class="case-metric-label t-ru">для старта</div>
-            <div class="case-metric-label t-sr">za početak</div>
-            <div class="case-metric-label t-en">to start</div>
-          </div>
-        </div>
-
-        <button class="case-expand-toggle" onclick="this.closest(&#39;.case-card&#39;).classList.toggle(&#39;expanded&#39;)">
-          <span class="t-ru">Подробнее</span>
-          <span class="t-sr">Detaljnije</span>
-          <span class="t-en">Details</span>
-          <svg class="case-expand-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-
-        <div class="case-expand-body">
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Проблема</div>
-            <div class="case-detail-label t-sr">Problem</div>
-            <div class="case-detail-label t-en">Problem</div>
-            <div class="case-detail-text">
-              <span class="t-ru">ChatGPT недоступен в ряде стран, требует регистрацию и платную подписку. Пользователи хотят общаться с AI прямо в Telegram — без VPN, аккаунтов и оплаты.</span>
-              <span class="t-sr">ChatGPT nije dostupan u nekim zemljama, zahteva registraciju i plaćenu pretplatu. Korisnici žele AI direktno u Telegramu — bez VPN-a i naloga.</span>
-              <span class="t-en">ChatGPT is unavailable in some countries, requires sign-up and a paid subscription. Users want AI right in Telegram — no VPN, no accounts, no payment.</span>
-            </div>
-          </div>
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Что мы сделали</div>
-            <div class="case-detail-label t-sr">Šta smo uradili</div>
-            <div class="case-detail-label t-en">What we did</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Standalone Python-бот на OpenAI API с памятью диалога в Supabase Postgres. AI генерирует shortcut-кнопки с вариантами ответа после каждого сообщения. Premium через Telegram Stars — доступ к GPT-4.1. Монетизация: подписка на каналы, донаты и premium. Админ-бот для мониторинга ошибок и платежей.</span>
-              <span class="t-sr">Standalone Python bot na OpenAI API sa memorijom dijaloga u Supabase Postgres. AI generiše shortcut dugmad sa opcijama odgovora. Premium kroz Telegram Stars — pristup GPT-4.1. Admin bot za monitoring.</span>
-              <span class="t-en">Standalone Python bot on OpenAI API with dialogue memory in Supabase Postgres. AI generates shortcut buttons with reply options after each message. Premium via Telegram Stars — access to GPT-4.1. Monetization: channel subscriptions, donations and premium. Admin bot for error and payment monitoring.</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-card" id="case-reels">
-        <div class="case-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
-        </div>
-        <div class="case-tag">Utility · Telegram · <a href="https://t.me/IG2TG_bot" style="color:var(--blue);text-decoration:none;">@IG2TG_bot</a></div>
-        <div class="case-title t-ru">Бот для скачивания видео из соцсетей</div>
-        <div class="case-title t-sr">Bot za preuzimanje videa sa društvenih mreža</div>
-        <div class="case-title t-en">Social media video downloader bot</div>
-        <div class="case-desc">
-          <span class="t-ru">Telegram-бот, который скачивает видео из Instagram, TikTok и YouTube. Отправляешь ссылку — получаешь видео в чат. Без водяных знаков, без сайтов с рекламой.</span>
-          <span class="t-sr">Telegram bot koji preuzima video sa Instagrama, TikToka i YouTubea. Pošaljete link — dobijete video u čat. Bez vodenih žigova, bez sajtova sa reklamama.</span>
-          <span class="t-en">A Telegram bot that downloads videos from Instagram, TikTok and YouTube. Send a link — get the video in chat. No watermarks, no ad-filled websites.</span>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric">
-            <div class="case-metric-val">3</div>
-            <div class="case-metric-label t-ru">платформы</div>
-            <div class="case-metric-label t-sr">platforme</div>
-            <div class="case-metric-label t-en">platforms</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val">50 MB</div>
-            <div class="case-metric-label t-ru">макс. видео</div>
-            <div class="case-metric-label t-sr">maks. video</div>
-            <div class="case-metric-label t-en">max video</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val">H.264</div>
-            <div class="case-metric-label t-ru">авто-конвертация</div>
-            <div class="case-metric-label t-sr">auto-konverzija</div>
-            <div class="case-metric-label t-en">auto-conversion</div>
-          </div>
-        </div>
-
-        <button class="case-expand-toggle" onclick="this.closest(&#39;.case-card&#39;).classList.toggle(&#39;expanded&#39;)">
-          <span class="t-ru">Подробнее</span>
-          <span class="t-sr">Detaljnije</span>
-          <span class="t-en">Details</span>
-          <svg class="case-expand-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-
-        <div class="case-expand-body">
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Проблема</div>
-            <div class="case-detail-label t-sr">Problem</div>
-            <div class="case-detail-label t-en">Problem</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Сохранить Reels, TikTok или Shorts — боль. Сайты-загрузчики завалены рекламой, часть не работает, видео скачиваются с водяными знаками или без звука.</span>
-              <span class="t-sr">Sačuvati Reels, TikTok ili Shorts — muka. Sajtovi za preuzimanje puni reklama, deo ne radi, video dolazi sa vodenim žigovima.</span>
-              <span class="t-en">Saving Reels, TikToks or Shorts is painful. Downloader sites are full of ads, half don't work, videos come with watermarks or no audio.</span>
-            </div>
-          </div>
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Что мы сделали</div>
-            <div class="case-detail-label t-sr">Šta smo uradili</div>
-            <div class="case-detail-label t-en">What we did</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Python-бот на yt-dlp с автоматической конвертацией в H.264 через ffmpeg для совместимости с Telegram. Поддержка Instagram (через cookies-авторизацию), TikTok и YouTube. Двуязычный интерфейс (RU/EN), SQLite-аналитика загрузок.</span>
-              <span class="t-sr">Python bot na yt-dlp sa automatskom konverzijom u H.264 kroz ffmpeg. Podrška za Instagram (cookies autorizacija), TikTok i YouTube. Dvojezični interfejs (RU/EN).</span>
-              <span class="t-en">Python bot powered by yt-dlp with automatic H.264 conversion via ffmpeg for Telegram compatibility. Instagram support (via cookie auth), TikTok and YouTube. Bilingual interface (RU/EN), SQLite download analytics.</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-card" id="case-contentmashina">
+      <div class="case-card" id="case-echofuture">
         <div class="case-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
         </div>
-        <div class="case-tag">AI · Content · <a href="https://t.me/Contentmachinabot" style="color:var(--blue);text-decoration:none;">@Contentmachinabot</a></div>
-        <div class="case-title t-ru">AI-фабрика контента: перевод шортсов с озвучкой</div>
-        <div class="case-title t-sr">AI fabrika sadržaja: prevod šortova sa glasom</div>
-        <div class="case-title t-en">AI content factory: Shorts translation with voiceover</div>
+        <div class="case-tag">Content · AI · <a href="https://t.me/echo_future" style="color:var(--blue);text-decoration:none;">@echo_future</a></div>
+        <div class="case-title t-ru">AI-автопилот новостного Telegram-канала</div>
+        <div class="case-title t-sr">AI autopilot za novinski Telegram kanal</div>
+        <div class="case-title t-en">AI autopilot for a news Telegram channel</div>
         <div class="case-desc">
-          <span class="t-ru">Telegram-бот, который берёт английский YouTube Shorts и выдаёт готовое русское видео с AI-озвучкой и субтитрами. 7 этапов: скачивание, транскрипция, перевод GPT-4o, озвучка OpenAI TTS, синхронизация, коррекция субтитров, сборка ffmpeg.</span>
-          <span class="t-sr">Telegram bot koji uzima engleski YouTube Shorts i pravi gotov ruski video sa AI glasom i titlovima. 7 faza: preuzimanje, transkripcija, prevod GPT-4o, glas OpenAI TTS, sinhronizacija, korekcija titlova, montaža ffmpeg.</span>
-          <span class="t-en">A Telegram bot that takes an English YouTube Shorts and produces a ready-made Russian video with AI voiceover and subtitles. 7 stages: download, transcription, GPT-4o translation, OpenAI TTS voiceover, sync, subtitle correction, ffmpeg compositing.</span>
-        </div>
-        <div class="case-metrics">
-          <div class="case-metric">
-            <div class="case-metric-val">7</div>
-            <div class="case-metric-label t-ru">этапов pipeline</div>
-            <div class="case-metric-label t-sr">faza pipeline-a</div>
-            <div class="case-metric-label t-en">pipeline stages</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val">$0.02</div>
-            <div class="case-metric-label t-ru">за видео</div>
-            <div class="case-metric-label t-sr">po videu</div>
-            <div class="case-metric-label t-en">per video</div>
-          </div>
-          <div class="case-metric">
-            <div class="case-metric-val">GPT-4o</div>
-            <div class="case-metric-label t-ru">перевод + субтитры</div>
-            <div class="case-metric-label t-sr">prevod + titlovi</div>
-            <div class="case-metric-label t-en">translation + subs</div>
-          </div>
-        </div>
-
-        <button class="case-expand-toggle" onclick="this.closest(&#39;.case-card&#39;).classList.toggle(&#39;expanded&#39;)">
-          <span class="t-ru">Подробнее</span>
-          <span class="t-sr">Detaljnije</span>
-          <span class="t-en">Details</span>
-          <svg class="case-expand-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-
-        <div class="case-expand-body">
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Проблема</div>
-            <div class="case-detail-label t-sr">Problem</div>
-            <div class="case-detail-label t-en">Problem</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Перевод видеоконтента вручную — долго и дорого. Нанимать переводчика, диктора, монтажёра для каждого шортса нерентабельно. Нужен автоматический pipeline, который делает всё за секунды.</span>
-              <span class="t-sr">Ručni prevod video sadržaja je skup i spor. Angažovati prevodioca, spikera i montažera za svaki šorts je neisplativo. Potreban je automatski pipeline.</span>
-              <span class="t-en">Manual video translation is slow and expensive. Hiring a translator, voiceover artist and editor for each short is not viable. An automated pipeline is needed.</span>
-            </div>
-          </div>
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Что мы сделали</div>
-            <div class="case-detail-label t-sr">Šta smo uradili</div>
-            <div class="case-detail-label t-en">What we did</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Полностью автоматический pipeline из 7 этапов. Whisper транскрибирует оригинал, GPT-4o переводит с учётом контекста, OpenAI TTS озвучивает, Whisper синхронизирует субтитры, GPT-4o корректирует тайминги, ffmpeg собирает финальное видео. Два режима: полноэкранный с зумом или с оверлеем. Управление через Telegram-бот — отправляешь ссылку, получаешь готовое видео.</span>
-              <span class="t-sr">Potpuno automatski pipeline od 7 faza. Whisper transkribuje, GPT-4o prevodi, OpenAI TTS govori, Whisper sinhronizuje titlove, GPT-4o koriguje tajminge, ffmpeg sklapa finalni video. Dva režima: fullscreen ili sa overlejem. Upravljanje kroz Telegram bot.</span>
-              <span class="t-en">Fully automated 7-stage pipeline. Whisper transcribes the original, GPT-4o translates with context, OpenAI TTS voices it, Whisper syncs subtitles, GPT-4o corrects timings, ffmpeg assembles the final video. Two modes: fullscreen with zoom or with overlay. Controlled via Telegram bot — send a link, get a finished video.</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="case-card" id="case-echofuture">
-        <div class="case-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 6h16M4 18h16"></path><circle cx="19" cy="6" r="2"></circle><circle cx="19" cy="18" r="2"></circle></svg>
-        </div>
-        <div class="case-tag">AI · Telegram · <a href="https://t.me/echo_future" style="color:var(--blue);text-decoration:none;">@echo_future</a></div>
-        <div class="case-title t-ru">Echo Future: AI-автопилот для новостного Telegram-канала</div>
-        <div class="case-title t-sr">Echo Future: AI autopilot za novinski Telegram kanal</div>
-        <div class="case-title t-en">Echo Future: AI autopilot for a news Telegram channel</div>
-        <div class="case-desc">
-          <span class="t-ru">Бот, который каждое утро парсит TechCrunch, переписывает новости через GPT в вирусном стиле, генерирует манга-иллюстрации и отправляет на одобрение с кнопками отложенной публикации.</span>
-          <span class="t-sr">Bot koji svakog jutra parsira TechCrunch, prepisuje vesti kroz GPT u viralnom stilu, generiše manga ilustracije i šalje na odobrenje sa dugmićima za odloženu objavu.</span>
-          <span class="t-en">A bot that parses TechCrunch every morning, rewrites news via GPT in a viral style, generates manga-style illustrations, and sends for approval with scheduled publishing buttons.</span>
+          <span class="t-ru">Полностью автоматический контент-пайплайн: парсинг новостей, рерайт через GPT-5 в вирусном стиле, генерация иллюстраций через gpt-image-2, публикация в два канала (RU + EN) без участия человека. 2 поста в день на автопилоте.</span>
+          <span class="t-sr">Potpuno automatski sadržajni pajplajn: parsiranje vesti, prepisivanje kroz GPT-5 u viralnom stilu, generisanje ilustracija, objavljivanje u dva kanala (RU + EN) bez učešća čoveka.</span>
+          <span class="t-en">Fully automated content pipeline: news parsing, GPT-5 rewriting in viral style, gpt-image-2 illustrations, publishing to two channels (RU + EN) with zero human involvement. 2 posts per day on autopilot.</span>
         </div>
         <div class="case-metrics">
           <div class="case-metric">
@@ -1731,66 +1523,124 @@ footer .container { display: flex; justify-content: space-between; align-items: 
             <div class="case-metric-label t-en">manual work</div>
           </div>
           <div class="case-metric">
-            <div class="case-metric-val">3</div>
-            <div class="case-metric-label t-ru">поста/день</div>
-            <div class="case-metric-label t-sr">posta/dan</div>
-            <div class="case-metric-label t-en">posts/day</div>
+            <div class="case-metric-val">2/day</div>
+            <div class="case-metric-label t-ru">постов на автопилоте</div>
+            <div class="case-metric-label t-sr">postova na autopilotu</div>
+            <div class="case-metric-label t-en">posts on autopilot</div>
           </div>
           <div class="case-metric">
-            <div class="case-metric-val">$0.01</div>
-            <div class="case-metric-label t-ru">за пост</div>
-            <div class="case-metric-label t-sr">po postu</div>
-            <div class="case-metric-label t-en">per post</div>
+            <div class="case-metric-val">$8</div>
+            <div class="case-metric-label t-ru">в месяц за контент</div>
+            <div class="case-metric-label t-sr">mesečno za sadržaj</div>
+            <div class="case-metric-label t-en">per month for content</div>
           </div>
-        </div>
-
-        <button class="case-expand-toggle" onclick="this.closest('.case-card').classList.toggle('expanded')">
-          <span class="t-ru">Подробнее</span>
-          <span class="t-sr">Detaljnije</span>
-          <span class="t-en">Details</span>
-          <svg class="case-expand-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-        </button>
-
-        <div class="case-expand-body">
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Проблема</div>
-            <div class="case-detail-label t-sr">Problem</div>
-            <div class="case-detail-label t-en">Problem</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Вести новостной Telegram-канал — это ежедневная рутина: искать новости, переписывать, делать картинки, публиковать. Без автоматизации один пост занимает 20-30 минут, а нужно 3-5 в день.</span>
-              <span class="t-sr">Vođenje novinske Telegram kanala je dnevna rutina: tražiti vesti, prepisivati, praviti slike, objavljivati. Bez automatizacije jedan post traje 20-30 minuta, a treba 3-5 dnevno.</span>
-              <span class="t-en">Running a news Telegram channel is a daily grind: find news, rewrite, create images, publish. Without automation, one post takes 20-30 minutes, and you need 3-5 per day.</span>
-            </div>
-          </div>
-
-          <div class="case-detail-section">
-            <div class="case-detail-label t-ru">Что мы сделали</div>
-            <div class="case-detail-label t-sr">Šta smo uradili</div>
-            <div class="case-detail-label t-en">What we did</div>
-            <div class="case-detail-text">
-              <span class="t-ru">Полностью автоматический pipeline: RSS-парсинг TechCrunch, дедупликация через history.json, рерайт через GPT-4.1-mini с вирусным промптом, генерация манга-иллюстраций через Pollinations.ai, отправка админу с inline-кнопками (сейчас / +4ч / +8ч / новый текст / новая картинка / пропустить). Ежедневный запуск по крону в 9:00. Публикация в канал без звукового уведомления. Деплой на VPS через systemd.</span>
-              <span class="t-sr">Potpuno automatski pipeline: RSS parsiranje TechCrunch, deduplikacija kroz history.json, rewrite kroz GPT-4.1-mini sa viralnim promptom, generisanje manga ilustracija kroz Pollinations.ai, slanje adminu sa inline dugmićima (odmah / +4h / +8h / novi tekst / nova slika / preskoči). Dnevno pokretanje u 9:00. Objava bez zvučnog obaveštenja. Deploy na VPS kroz systemd.</span>
-              <span class="t-en">Fully automated pipeline: RSS parsing TechCrunch, deduplication via history.json, rewrite via GPT-4.1-mini with viral prompt, manga illustration generation via Pollinations.ai, admin preview with inline buttons (now / +4h / +8h / new text / new image / skip). Daily cron at 9:00 AM. Silent channel posting. Deployed on VPS via systemd.</span>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      </div><!-- /cases-more-cards -->
+      <div class="case-card" id="case-unlim">
+        <div class="case-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <div class="case-tag">AI Bot · Telegram</div>
+        <div class="case-title t-ru">GPT-бот в Telegram с монетизацией</div>
+        <div class="case-title t-sr">GPT bot u Telegramu sa monetizacijom</div>
+        <div class="case-title t-en">Telegram GPT bot with monetization</div>
+        <div class="case-desc">
+          <span class="t-ru">AI-ассистент в Telegram для аудитории на 8 языках: ответы со стримингом, генерация и распознавание картинок, голосовые, веб-поиск, пересказ YouTube-видео, долгая память о пользователе и «Совещание 3 ИИ». Монетизация через Telegram Stars: premium на GPT-5.5 и подписки с автопродлением.</span>
+          <span class="t-sr">AI asistent u Telegramu za publiku na 8 jezika: tekstovi, generisanje i prepoznavanje slika, glasovne poruke, web pretraga, rezime YouTube videa, dugoročna memorija i «Veće 3 AI». Monetizacija kroz Telegram Stars: premium na GPT-5.5 i pretplate sa automatskim produženjem.</span>
+          <span class="t-en">Telegram AI assistant serving an audience in 8 languages: streamed answers, image generation and understanding, voice messages, web search, YouTube video summaries, long-term user memory and an "AI Council" of 3 models. Monetized via Telegram Stars: GPT-5.5 premium and auto-renewing subscriptions.</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-val">1200+</div>
+            <div class="case-metric-label t-ru">пользователей · 8 языков</div>
+            <div class="case-metric-label t-sr">korisnika · 8 jezika</div>
+            <div class="case-metric-label t-en">users · 8 languages</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-val">10+</div>
+            <div class="case-metric-label t-ru">AI-фич: фото · голос · поиск · память</div>
+            <div class="case-metric-label t-sr">AI funkcija: foto · glas · pretraga · memorija</div>
+            <div class="case-metric-label t-en">AI features: photo · voice · search · memory</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-val">Stars</div>
+            <div class="case-metric-label t-ru">подписки с автопродлением</div>
+            <div class="case-metric-label t-sr">pretplate sa autoproduženjem</div>
+            <div class="case-metric-label t-en">auto-renewing subscriptions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card" id="case-contentfactory">
+        <div class="case-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+        </div>
+        <div class="case-tag">Content · Video · AI</div>
+        <div class="case-title t-ru">Фабрика контента: автоматическая локализация шортсов</div>
+        <div class="case-title t-sr">Fabrika sadržaja: automatska lokalizacija kratkih videa</div>
+        <div class="case-title t-en">Content factory: automated shorts localization</div>
+        <div class="case-desc">
+          <span class="t-ru">Пайплайн автоматической локализации YouTube Shorts с английского на русский. GPT-4o переводит и адаптирует сценарий, OpenAI TTS озвучивает, ffmpeg собирает финальное видео с синхронизацией аудио. Из одного EN-ролика — готовый RU-шортс за минуты.</span>
+          <span class="t-sr">Pajplajn za automatsku lokalizaciju YouTube Shorts sa engleskog na ruski. GPT-4o prevodi scenario, OpenAI TTS snima glas, ffmpeg sastavlja finalni video.</span>
+          <span class="t-en">Automated localization pipeline for YouTube Shorts from English to Russian. GPT-4o translates and adapts the script, OpenAI TTS voices it, ffmpeg composes the final video with audio sync. One EN short becomes a ready RU short in minutes.</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-val">EN→RU</div>
+            <div class="case-metric-label t-ru">автолокализация</div>
+            <div class="case-metric-label t-sr">autolokalizacija</div>
+            <div class="case-metric-label t-en">auto-localization</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-val">AI TTS</div>
+            <div class="case-metric-label t-ru">озвучка + монтаж</div>
+            <div class="case-metric-label t-sr">glas + montaža</div>
+            <div class="case-metric-label t-en">voiceover + editing</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-val t-ru">Минуты</div>
+            <div class="case-metric-val t-sr">Minuti</div>
+            <div class="case-metric-val t-en">Minutes</div>
+            <div class="case-metric-label t-ru">вместо часов</div>
+            <div class="case-metric-label t-sr">umesto sati</div>
+            <div class="case-metric-label t-en">instead of hours</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card" id="case-ig2tg">
+        <div class="case-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><line x1="16" y1="5" x2="22" y2="5"></line><line x1="19" y1="2" x2="19" y2="8"></line><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+        </div>
+        <div class="case-tag">Bot · Media · <a href="https://t.me/IG2TG_bot" style="color:var(--blue);text-decoration:none;">@IG2TG_bot</a></div>
+        <div class="case-title t-ru">Бот для скачивания видео из соцсетей</div>
+        <div class="case-title t-sr">Bot za preuzimanje videa sa društvenih mreža</div>
+        <div class="case-title t-en">Social media video downloader bot</div>
+        <div class="case-desc">
+          <span class="t-ru">Telegram-бот, который скачивает видео из Instagram, TikTok и YouTube по ссылке. Отправляешь ссылку — получаешь видео в чат.</span>
+          <span class="t-sr">Telegram bot koji preuzima video sa Instagrama, TikToka i YouTubea. Pošalješ link — dobiješ video u čat.</span>
+          <span class="t-en">Telegram bot that downloads videos from Instagram, TikTok and YouTube by link. Send a link — get the video in chat.</span>
+        </div>
+        <div class="case-metrics">
+          <div class="case-metric">
+            <div class="case-metric-val">3</div>
+            <div class="case-metric-label t-ru">платформы</div>
+            <div class="case-metric-label t-sr">platforme</div>
+            <div class="case-metric-label t-en">platforms</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric-val t-ru">Мгновенно</div>
+            <div class="case-metric-val t-sr">Odmah</div>
+            <div class="case-metric-val t-en">Instant</div>
+            <div class="case-metric-label t-ru">ссылка → видео</div>
+            <div class="case-metric-label t-sr">link → video</div>
+            <div class="case-metric-label t-en">link → video</div>
+          </div>
+        </div>
+      </div>
 
     </div>
-
-    <div style="text-align:center;margin-top:28px;">
-      <button id="cases-more-btn" onclick="document.getElementById('cases-more').style.display='contents';this.style.display='none';" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--gray-200);border-radius:8px;padding:10px 24px;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;color:var(--gray-700);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--gray-400)';this.style.color='var(--black)'" onmouseout="this.style.borderColor='var(--gray-200)';this.style.color='var(--gray-700)'">
-        <span class="t-ru">Ещё проекты</span>
-        <span class="t-sr">Još projekata</span>
-        <span class="t-en">More projects</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </button>
-    </div>
-
     </div>
 
 
@@ -1960,9 +1810,16 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         <div class="site-card-badge">HTML / JS</div>
       </a>
 
-    </div>
-
-    <div class="sites-grid sites-hidden" id="sites-hidden">
+      <a class="site-card" href="https://lheuj.selzio.com" target="_blank" rel="noopener noreferrer">
+        <div class="site-card-name">LHEUJ Dance</div>
+        <div class="site-card-url">lheuj.selzio.com</div>
+        <div class="site-card-desc">
+          <span class="t-ru">Лендинг школы адыгских танцев. Параллакс, мультиязычность (RU/АДЫ).</span>
+          <span class="t-sr">Landing škole adiškog plesa. Paralaks, višejezičnost (RU/ADI).</span>
+          <span class="t-en">Circassian dance school landing. Parallax, multilingual (RU/Adyghe).</span>
+        </div>
+        <div class="site-card-badge">HTML / CSS / i18n</div>
+      </a>
 
       <a class="site-card" href="https://grafterra.ru" target="_blank" rel="noopener noreferrer">
         <div class="site-card-name">Grafterra</div>
@@ -1986,17 +1843,6 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         <div class="site-card-badge">Web</div>
       </a>
 
-      <!-- AI Mother Bot — temporarily hidden -->
-      <!-- Jumdoo — temporarily hidden -->
-
-    </div>
-
-    <div style="text-align:center;margin-top:24px;">
-      <button class="sites-more-btn" id="sites-more-btn" onclick="document.getElementById('sites-hidden').classList.toggle('sites-visible');this.querySelector('.t-ru').textContent=this.querySelector('.t-ru').textContent==='Ещё'?'Свернуть':'Ещё';this.querySelector('.t-sr').textContent=this.querySelector('.t-sr').textContent==='Još'?'Sakrij':'Još';this.querySelector('.t-en').textContent=this.querySelector('.t-en').textContent==='More'?'Less':'More';">
-        <span class="t-ru">Ещё</span>
-        <span class="t-sr">Još</span>
-        <span class="t-en">More</span>
-      </button>
     </div>
 
   </div>
@@ -2236,6 +2082,11 @@ function setLang(lang) {
   });
 }
 (function(){
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang && ['ru', 'en', 'sr'].indexOf(urlLang) !== -1) {
+    setLang(urlLang);
+    return;
+  }
   var saved = localStorage.getItem('lang');
   if (!saved) {
     var bl = (navigator.language || '').toLowerCase().slice(0, 2);
