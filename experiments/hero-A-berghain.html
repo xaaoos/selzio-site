@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELZIO — A · BERGHAIN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --ink:#f2f2f2; --mut:#7a7a7a; --line:#1e1e1e;
+  --strobe:#ffffff; --steel:#9aa3ad;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:'Archivo',sans-serif; line-height:1.55;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  background-image:
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: calc(100% / 12) 100%;
+}
+.scan{position:fixed;inset:0;pointer-events:none;z-index:50;mix-blend-mode:overlay;opacity:.5;
+  background:repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 3px);}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+
+/* top status bar */
+.status{position:fixed;top:0;left:0;right:0;z-index:40;
+  border-bottom:1px solid var(--line);background:rgba(10,10,10,.85);backdrop-filter:blur(8px);}
+.status .wrap{display:flex;justify-content:space-between;align-items:center;height:46px}
+.status b{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--ink);font-weight:500}
+.status span{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--mut);display:flex;gap:8px;align-items:center}
+.dot{width:7px;height:7px;background:var(--strobe);border-radius:50%;animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 60px;position:relative}
+.tag{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  border:1px solid #2a2a2a;padding:8px 16px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--steel);margin-bottom:40px}
+.tag::before{content:"";width:8px;height:8px;background:var(--strobe)}
+
+h1{font-family:'Anton',sans-serif;font-weight:400;
+  font-size:clamp(54px,11vw,150px);line-height:.92;letter-spacing:-1px;
+  text-transform:uppercase;color:var(--ink);max-width:13ch;margin-bottom:34px}
+h1 .o{-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.sub{font-size:19px;color:#b6b6b6;max-width:520px;margin-bottom:44px;line-height:1.65}
+.actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.btn{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:2px;font-size:13px;font-weight:500;
+  background:var(--ink);color:var(--bg);padding:18px 34px;text-decoration:none;
+  border:1px solid var(--ink);transition:.18s}
+.btn:hover{background:transparent;color:var(--ink)}
+.ghost{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--mut);text-decoration:none}
+.ghost:hover{color:var(--ink)}
+
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;}
+.pit{padding:34px 0;border-left:1px solid var(--line);padding-left:24px}
+.pit:first-child{border-left:none;padding-left:0}
+.pnum{font-family:'Anton',sans-serif;font-size:46px;line-height:1;color:var(--ink);margin-bottom:8px}
+.plab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut)}
+
+@media(max-width:760px){
+  body{background-size:calc(100%/6) 100%}
+  .wrap{padding:0 22px}
+  h1{font-size:clamp(44px,15vw,72px)}
+  .proof .wrap{grid-template-columns:1fr}
+  .pit{border-left:none;padding-left:0;border-top:1px solid var(--line)}
+  .pit:first-child{border-top:none}
+}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+
+<div class="status"><div class="wrap">
+  <b>SELZIO</b>
+  <span><i class="dot"></i> AI PRODUCT STUDIO // BELGRADE</span>
+</div></div>
+
+<section class="hero"><div class="wrap">
+  <div class="tag">Разработка · Поддержка · Развитие</div>
+  <h1>Превращаем идею в <span class="o">AI-продукт</span></h1>
+  <p class="sub">Разберёмся что нужно, спроектируем и построим. Вы получите продукт, который сможете развивать самостоятельно.</p>
+  <div class="actions">
+    <a href="#" class="btn">Рассказать идею →</a>
+    <a href="#" class="ghost">Смотреть кейсы</a>
+  </div>
+</div></section>
+
+<section class="proof"><div class="wrap">
+  <div class="pit"><div class="pnum">5</div><div class="plab">дней до рабочей версии</div></div>
+  <div class="pit"><div class="pnum">10×</div><div class="plab">быстрее классической разработки</div></div>
+  <div class="pit"><div class="pnum">OAI</div><div class="plab">OpenAI Partners</div></div>
+</div></section>
+
+</body>
+</html>

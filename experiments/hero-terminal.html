@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELZIO — TERMINAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* page */
+  --bg:#05080a;
+  --green:#36f57a; --green-dim:#1f9c4d; --green-faint:#0e3d22;
+  --amber:#ffcf4a; --txt:#bfe9cc; --mut:#5b7d66;
+  /* vars consumed by the neural-net canvas script (reused from real site) */
+  --gray-700:#27c259; --gray-500:#46ffa0; --black:#caffd9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(120% 80% at 50% 0%, #0a1310 0%, var(--bg) 60%),
+    var(--bg);
+  color:var(--txt);
+  font-family:'JetBrains Mono',monospace; line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; min-height:100vh;
+}
+/* neural net lives behind everything */
+#nn-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:0;opacity:.55}
+/* CRT scanlines + flicker + vignette */
+.crt{position:fixed;inset:0;pointer-events:none;z-index:60;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+.vig{position:fixed;inset:0;pointer-events:none;z-index:59;
+  box-shadow:inset 0 0 220px rgba(0,0,0,.9); background:radial-gradient(140% 100% at 50% 50%,transparent 55%,rgba(0,0,0,.55))}
+.flick{position:fixed;inset:0;pointer-events:none;z-index:58;background:var(--green);mix-blend-mode:overlay;opacity:0;animation:flick 8s infinite}
+@keyframes flick{0%,96%,100%{opacity:0}97%{opacity:.03}98%{opacity:.05}99%{opacity:0}}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+/* top bar */
+.bar{position:fixed;top:0;left:0;right:0;z-index:40;height:44px;
+  background:rgba(5,8,10,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--green-faint)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:44px}
+.bar .id{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:1px;color:var(--green)}
+.bar .id b{font-weight:700}
+.bar .id .blip{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:blink 1.3s steps(1) infinite}
+.bar .meta{font-size:11px;letter-spacing:1px;color:var(--mut)}
+@keyframes blink{50%{opacity:.25}}
+
+/* terminal window */
+.hero{min-height:100vh;display:flex;align-items:center;padding:96px 0 56px}
+.term{width:100%;border:1px solid var(--green-faint);border-radius:8px;
+  background:rgba(4,9,7,.72);backdrop-filter:blur(3px);
+  box-shadow:0 0 0 1px rgba(54,245,122,.06), 0 30px 80px rgba(0,0,0,.6), inset 0 0 60px rgba(54,245,122,.03)}
+.term-head{display:flex;align-items:center;gap:14px;padding:11px 16px;border-bottom:1px solid var(--green-faint)}
+.dots{display:flex;gap:7px}
+.dots i{width:11px;height:11px;border-radius:50%;display:block;opacity:.85}
+.dots i:nth-child(1){background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+.term-title{font-size:12px;color:var(--mut);letter-spacing:.5px}
+.term-body{padding:30px 30px 38px}
+
+.line{font-size:13px;letter-spacing:.4px;margin-bottom:6px}
+.prompt{color:var(--green)} .prompt .u{color:var(--amber)} .prompt .p{color:var(--green-dim)}
+.cmd{color:var(--txt)}
+.ok{color:var(--green-dim)}
+
+h1{font-weight:700;font-size:clamp(28px,4.6vw,56px);line-height:1.12;letter-spacing:-1px;
+  color:#eafff0;text-shadow:0 0 22px rgba(54,245,122,.25);margin:18px 0 4px;max-width:20ch}
+h1 .hl{color:var(--green);text-shadow:0 0 26px rgba(54,245,122,.5)}
+.cursor{display:inline-block;width:.62ch;height:1.02em;background:var(--green);
+  margin-left:2px;vertical-align:-2px;box-shadow:0 0 12px var(--green);animation:blink 1s steps(1) infinite}
+
+.sub{color:var(--mut);font-size:15px;max-width:62ch;margin:18px 0 30px}
+.sub .c{color:var(--green-dim)}
+
+.actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-size:14px;font-weight:700;
+  color:#04140a;background:var(--green);padding:13px 24px;border-radius:5px;text-decoration:none;
+  box-shadow:0 0 22px rgba(54,245,122,.35);transition:.18s}
+.btn:hover{background:#5dff95;box-shadow:0 0 34px rgba(54,245,122,.6);transform:translateY(-1px)}
+.btn::before{content:"›";font-size:17px;color:#04140a}
+.btn2{font-size:13px;color:var(--green);text-decoration:none;border:1px solid var(--green-faint);
+  padding:12px 18px;border-radius:5px;transition:.18s;letter-spacing:.3px}
+.btn2:hover{border-color:var(--green);background:rgba(54,245,122,.06)}
+
+/* proof table */
+.proof{margin-top:34px;border-top:1px dashed var(--green-faint);padding-top:22px}
+.proof .row{display:flex;align-items:baseline;gap:10px;font-size:13px;margin-bottom:9px;color:var(--mut)}
+.proof .k{color:var(--green-dim);min-width:130px}
+.proof .fill{flex:0 0 auto;color:var(--green-faint);letter-spacing:1px;overflow:hidden;white-space:nowrap}
+.proof .v{color:var(--txt);font-weight:700}
+.proof .v b{color:var(--green)}
+
+@media(max-width:760px){
+  .wrap{padding:0 16px}
+  .term-body{padding:22px 18px 26px}
+  h1{font-size:clamp(26px,8vw,40px)}
+  .proof .k{min-width:96px}
+  .proof .fill{display:none}
+}
+</style>
+</head>
+<body>
+<canvas id="nn-canvas"></canvas>
+<div class="vig"></div><div class="crt"></div><div class="flick"></div>
+
+<div class="bar"><div class="wrap">
+  <div class="id"><span class="blip"></span> <b>SELZIO</b> <span style="color:var(--mut)">// ai_product_studio</span></div>
+  <div class="meta">~ belgrade · uptime 99.9% · v3.0</div>
+</div></div>
+
+<section class="hero"><div class="wrap">
+  <div class="term">
+    <div class="term-head">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div class="term-title">guest@selzio: ~/new-product — zsh</div>
+    </div>
+    <div class="term-body">
+      <div class="line prompt"><span class="u">guest</span><span class="p">@selzio</span>:~$ <span class="cmd">./selzio --build --idea "ваша идея"</span></div>
+      <div class="line ok">[ok] анализ задачи · проектирование · сборка — инициализировано</div>
+
+      <h1 id="type"><span class="cursor"></span></h1>
+
+      <p class="sub"><span class="c"># </span>разберёмся что нужно, спроектируем и построим. вы получите продукт, который сможете развивать самостоятельно.</p>
+
+      <div class="actions">
+        <a href="#" class="btn">рассказать идею</a>
+        <a href="#" class="btn2">$ cat cases.md</a>
+      </div>
+
+      <div class="proof">
+        <div class="row"><span class="k">mvp_time</span><span class="fill">..........................</span><span class="v"><b>5</b> дней</span></div>
+        <div class="row"><span class="k">build_speed</span><span class="fill">.......................</span><span class="v"><b>10×</b> быстрее</span></div>
+        <div class="row"><span class="k">partner</span><span class="fill">...........................</span><span class="v">OpenAI <b>Partners</b></span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<script>
+/* ===== typed headline ===== */
+(function(){
+  var el=document.getElementById('type');
+  var full='Превращаем вашу идею в ';
+  var hl='AI-продукт';
+  var cur='<span class="cursor"></span>';
+  var i=0, j=0, typingHl=false;
+  function tick(){
+    if(!typingHl){
+      el.innerHTML=full.slice(0,i)+cur; i++;
+      if(i>full.length){typingHl=true;} setTimeout(tick, 34);
+    }else{
+      el.innerHTML=full+'<span class="hl">'+hl.slice(0,j)+'</span>'+cur; j++;
+      if(j<=hl.length) setTimeout(tick, 60);
+    }
+  }
+  tick();
+})();
+
+/* ===== neural network background (reused from selzio.com, recoloured green) ===== */
+(function(){
+  var canvas=document.getElementById('nn-canvas'); if(!canvas) return;
+  var ctx=canvas.getContext('2d'); var W,H,dpr;
+  function resize(){dpr=Math.min(window.devicePixelRatio,2);W=innerWidth;H=innerHeight;
+    canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(dpr,0,0,dpr,0,0);}
+  resize();addEventListener('resize',resize);
+  function cv(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()||'#888';}
+  var layers=[3,5,7,5,3,2],nodes=[];
+  for(var l=0;l<layers.length;l++){var ln=[];for(var n=0;n<layers[l];n++){ln.push({activation:Math.random()*0.5,targetActivation:Math.random(),driftXspeed:0.03+Math.random()*0.06,driftYspeed:0.02+Math.random()*0.05,driftXamp:18+Math.random()*28,driftYamp:14+Math.random()*22,driftXphase:Math.random()*6.28,driftYphase:Math.random()*6.28,flash:0});}nodes.push(ln);}
+  var weights=[];
+  for(var l=0;l<layers.length-1;l++){var lw=[];for(var i=0;i<layers[l];i++){var nw=[];for(var j=0;j<layers[l+1];j++){nw.push({w:(Math.random()-0.5)*2,targetW:(Math.random()-0.5)*2,signal:0,signalActive:false,signalSpeed:0.0004+Math.random()*0.0008});}lw.push(nw);}weights.push(lw);}
+  var lastTrain=0,lastSignalBatch=0,_time=0;
+  function trainStep(t){if(t-lastTrain<6)return;lastTrain=t;for(var l=0;l<weights.length;l++)for(var i=0;i<weights[l].length;i++)for(var j=0;j<weights[l][i].length;j++){if(Math.random()<0.3){weights[l][i][j].targetW+=(Math.random()-0.5)*0.8;weights[l][i][j].targetW=Math.max(-2,Math.min(2,weights[l][i][j].targetW));}}for(var l=0;l<nodes.length;l++)for(var n=0;n<nodes[l].length;n++){if(Math.random()<0.4)nodes[l][n].targetActivation=Math.random();}}
+  function fireSignals(t){if(t-lastSignalBatch<9)return;lastSignalBatch=t;var sl=Math.floor(Math.random()*weights.length);for(var i=0;i<weights[sl].length;i++)for(var j=0;j<weights[sl][i].length;j++){if(Math.random()<0.2&&!weights[sl][i][j].signalActive){weights[sl][i][j].signalActive=true;weights[sl][i][j].signal=0;}}}
+  function nodePos(l,n){var marginX=W*0.12,marginY=H*0.15,usableW=W-marginX*2,usableH=H-marginY*2;var x=marginX+(l/(layers.length-1))*usableW;var count=layers[l],spacing=Math.min(usableH/(count+1),65),totalH=spacing*(count-1);var y=H/2-totalH/2+n*spacing;var nd=nodes[l][n];x+=Math.sin(_time*nd.driftXspeed+nd.driftXphase)*nd.driftXamp;y+=Math.sin(_time*nd.driftYspeed+nd.driftYphase)*nd.driftYamp;return{x:x,y:y};}
+  function lerp(a,b,t){return a+(b-a)*t;}
+  var camZoom=1,camX=0,camY=0,camTargetZoom=1.6,camTargetX=0,camTargetY=0,lastCamShift=0;
+  function updateCamera(t){var sec=t/1000;if(sec-lastCamShift>15+Math.random()*10){lastCamShift=sec;camTargetZoom=1.0+Math.random()*1.2;camTargetX=(Math.random()-0.5)*W*0.4;camTargetY=(Math.random()-0.5)*H*0.3;}camZoom=lerp(camZoom,camTargetZoom,0.001);camX=lerp(camX,camTargetX,0.001);camY=lerp(camY,camTargetY,0.001);camX+=Math.sin(sec*0.05)*0.3;camY+=Math.cos(sec*0.04)*0.2;}
+  /* green palette for edges/signals (terminal theme) */
+  var posEdge='rgba(54,245,122,', negEdge='rgba(20,110,60,';
+  function render(t){
+    requestAnimationFrame(render);
+    ctx.clearRect(0,0,W,H); updateCamera(t);
+    ctx.save();
+    ctx.translate(W/2,H/2);ctx.scale(camZoom,camZoom);ctx.translate(-W/2+camX,-H/2+camY);
+    var nodeColor=cv('--gray-700'),nodeStroke=cv('--gray-500'),signalColor=cv('--black'),bgColor=cv('--bg');
+    trainStep(t/1000);fireSignals(t/1000);_time=t/1000;
+    for(var l=0;l<weights.length;l++)for(var i=0;i<weights[l].length;i++)for(var j=0;j<weights[l][i].length;j++){weights[l][i][j].w=lerp(weights[l][i][j].w,weights[l][i][j].targetW,0.004);}
+    for(var l=0;l<nodes.length;l++)for(var n=0;n<nodes[l].length;n++){nodes[l][n].activation=lerp(nodes[l][n].activation,nodes[l][n].targetActivation,0.006);}
+    for(var l=0;l<weights.length;l++)for(var i=0;i<weights[l].length;i++)for(var j=0;j<weights[l][i].length;j++){
+      var ww=weights[l][i][j],absW=Math.abs(ww.w);var p1=nodePos(l,i),p2=nodePos(l+1,j);var alpha=0.05+absW*0.16;
+      ctx.beginPath();var cx2=(p1.x+p2.x)/2+(Math.sin(l*2+i+j)*15),cy2=(p1.y+p2.y)/2;
+      ctx.moveTo(p1.x,p1.y);ctx.quadraticCurveTo(cx2,cy2,p2.x,p2.y);
+      ctx.strokeStyle=(ww.w>=0?posEdge:negEdge)+alpha+')';ctx.globalAlpha=1;ctx.lineWidth=(0.3+absW*1)/2;ctx.stroke();
+      if(ww.signalActive){ww.signal+=ww.signalSpeed;if(ww.signal>=1){ww.signalActive=false;ww.signal=0;nodes[l+1][j].flash=1;}else{var st=ww.signal;var sx=(1-st)*(1-st)*p1.x+2*(1-st)*st*cx2+st*st*p2.x;var sy=(1-st)*(1-st)*p1.y+2*(1-st)*st*cy2+st*st*p2.y;ctx.beginPath();ctx.arc(sx,sy,1.5+absW*0.75,0,Math.PI*2);ctx.fillStyle=signalColor;ctx.globalAlpha=Math.sin(st*Math.PI)*0.85;ctx.fill();ctx.globalAlpha=1;}}
+    }
+    for(var l=0;l<nodes.length;l++)for(var n=0;n<nodes[l].length;n++){
+      var nd=nodes[l][n],p=nodePos(l,n);nd.flash=Math.max(0,nd.flash-0.02);var r=(8+nd.activation*6)/3+nd.flash*2;
+      ctx.beginPath();ctx.arc(p.x,p.y,r+4+nd.flash*3,0,Math.PI*2);ctx.fillStyle=nodeColor;ctx.globalAlpha=0.06+nd.activation*0.08+nd.flash*0.18;ctx.fill();ctx.globalAlpha=1;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=bgColor;ctx.globalAlpha=1;ctx.fill();
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.fillStyle=nodeColor;ctx.globalAlpha=0.35+nd.activation*0.55+nd.flash*0.4;ctx.fill();ctx.globalAlpha=1;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,Math.PI*2);ctx.strokeStyle=nodeStroke;ctx.globalAlpha=0.6+nd.flash*0.3;ctx.lineWidth=1.2;ctx.stroke();ctx.globalAlpha=1;
+    }
+    ctx.restore();
+  }
+  requestAnimationFrame(render);
+})();
+</script>
+</body>
+</html>

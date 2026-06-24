@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SELZIO — C · STROBE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--ink:#fff;--mut:#777;--red:#ff2233;--line:#181818}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.scan{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.35;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 3px)}
+.flick{position:fixed;inset:0;pointer-events:none;z-index:55;background:#fff;mix-blend-mode:overlay;opacity:0;animation:flick 7s infinite}
+@keyframes flick{0%,97%,100%{opacity:0}97.5%{opacity:.06}98.5%{opacity:.10}99%{opacity:0}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+
+/* marquee bar */
+.mq{position:fixed;top:0;left:0;right:0;z-index:40;background:var(--red);color:#000;overflow:hidden;border-bottom:1px solid #000}
+.mq-track{display:inline-flex;white-space:nowrap;font-family:'JetBrains Mono',monospace;font-weight:700;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:8px 0;animation:scroll 22s linear infinite}
+.mq-track span{padding:0 28px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 60px;position:relative}
+.kicker{display:flex;gap:14px;align-items:center;font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--mut);margin-bottom:30px}
+.kicker b{color:var(--red);font-weight:700}
+.bar{width:46px;height:2px;background:var(--red);animation:strobe .9s steps(1) infinite}
+@keyframes strobe{50%{opacity:.15}}
+
+h1{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(48px,9.5vw,124px);line-height:.95;
+  letter-spacing:-3px;text-transform:uppercase;max-width:14ch;margin-bottom:30px;position:relative}
+.glitch{position:relative;display:inline-block;color:var(--ink)}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden}
+.glitch::before{color:var(--red);animation:gl1 2.6s infinite steps(2);clip-path:inset(0 0 55% 0)}
+.glitch::after{color:#00e5ff;animation:gl2 3.1s infinite steps(2);clip-path:inset(55% 0 0 0)}
+@keyframes gl1{0%,92%,100%{transform:translate(0)}93%{transform:translate(-3px,-2px)}96%{transform:translate(3px,1px)}}
+@keyframes gl2{0%,90%,100%{transform:translate(0)}91%{transform:translate(3px,2px)}95%{transform:translate(-3px,-1px)}}
+.sub{font-size:19px;color:#b3b3b3;max-width:540px;margin-bottom:42px}
+.actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.btn{font-family:'JetBrains Mono',monospace;font-weight:700;text-transform:uppercase;letter-spacing:2px;font-size:13px;
+  background:var(--red);color:#000;padding:18px 34px;text-decoration:none;border:2px solid var(--red);transition:.15s}
+.btn:hover{background:#000;color:var(--red)}
+.btn2{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--ink);
+  text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:3px}
+.btn2:hover{color:var(--red)}
+
+.proof{border-top:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:1fr 1fr 1fr}
+.pit{padding:30px 0;padding-left:26px;border-left:1px solid var(--line)}
+.pit:first-child{border-left:none;padding-left:0}
+.pnum{font-weight:900;font-size:44px;line-height:1;letter-spacing:-2px}
+.pnum em{font-style:normal;color:var(--red)}
+.plab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);margin-top:8px}
+
+@media(max-width:760px){.wrap{padding:0 22px}h1{font-size:clamp(40px,13vw,68px);letter-spacing:-1.5px}.proof .wrap{grid-template-columns:1fr}.pit{border-left:none;padding-left:0;border-top:1px solid var(--line)}.pit:first-child{border-top:none}}
+</style>
+</head>
+<body>
+<div class="scan"></div><div class="flick"></div>
+
+<div class="mq"><div class="mq-track">
+  <span>SELZIO</span><span>AI PRODUCT STUDIO</span><span>5 ДНЕЙ ДО MVP</span><span>10× БЫСТРЕЕ</span><span>OPENAI PARTNERS</span><span>BELGRADE</span>
+  <span>SELZIO</span><span>AI PRODUCT STUDIO</span><span>5 ДНЕЙ ДО MVP</span><span>10× БЫСТРЕЕ</span><span>OPENAI PARTNERS</span><span>BELGRADE</span>
+</div></div>
+
+<section class="hero"><div class="wrap">
+  <div class="kicker"><span class="bar"></span> Разработка <b>·</b> Поддержка <b>·</b> Развитие</div>
+  <h1>Превращаем идею в <span class="glitch" data-t="AI-продукт">AI-продукт</span></h1>
+  <p class="sub">Разберёмся что нужно, спроектируем и построим. Вы получите продукт, который сможете развивать самостоятельно.</p>
+  <div class="actions">
+    <a href="#" class="btn">Рассказать идею →</a>
+    <a href="#" class="btn2">Смотреть кейсы</a>
+  </div>
+</div></section>
+
+<section class="proof"><div class="wrap">
+  <div class="pit"><div class="pnum">5</div><div class="plab">дней до рабочей версии</div></div>
+  <div class="pit"><div class="pnum"><em>10×</em></div><div class="plab">быстрее классической разработки</div></div>
+  <div class="pit"><div class="pnum">OAI</div><div class="plab">OpenAI Partners</div></div>
+</div></section>
+
+</body>
+</html>
