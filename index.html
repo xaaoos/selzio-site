@@ -3,17 +3,10 @@
 <html lang="ru" data-theme="light" data-lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SELZIO — AI Product Studio</title>
-<script>
-(function(){
-  var saved = localStorage.getItem('theme');
-  var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', theme);
-})();
-</script>
+<title>Как внедрить ИИ в процессы компании — SELZIO</title>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFYCHH7YB5"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VFYCHH7YB5');</script>
-<meta name="description" content="SELZIO проектирует и создаёт AI-продукты для бизнеса — от исследования и стратегии до работающей версии и передачи команде.">
+<meta name="description" content="Внедрение ИИ без ломки привычной работы через AI‑напарников сотрудников: команда улучшает процессы, а инструменты и знания остаются внутри компании.">
 <meta name="theme-color" content="#153b67">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,37 +41,6 @@
   --pulse-1: #c0c0c8;
   --pulse-2: #bdbdc5;
   --pulse-3: #bababc;
-}
-
-[data-theme="dark"] {
-  --black: #f0f0f0;
-  --dark: #e0e0e0;
-  --gray-900: #d0d0d0;
-  --gray-700: #a0a0a0;
-  --gray-500: #777;
-  --gray-300: #444;
-  --gray-200: #363636;
-  --gray-100: #2a2a2a;
-  --white: #1a1a1a;
-  --bg: #111113;
-  --accent: #e0e0e0;
-  --accent-soft: #1a1a1c;
-  --blue: #60a5fa;
-  --blue-soft: #1e293b;
-  --green: #34d399;
-  --green-soft: #064e3b;
-  --card-bg: rgba(28,28,32,0.95);
-  --nav-bg: rgba(17,17,19,0.92);
-  --logo-color: #f0f0f0;
-  --hover-shadow: rgba(255,255,255,0.04);
-  --orbit-1: #3a3a44;
-  --orbit-2: #383842;
-  --orbit-3: #363640;
-  --orbit-4: #34343e;
-  --orbit-5: #32323c;
-  --pulse-1: #2e2e38;
-  --pulse-2: #2c2c36;
-  --pulse-3: #2a2a34;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -142,10 +104,6 @@ nav .container { display: grid; grid-template-columns: 1fr auto 1fr; align-items
   filter: invert(1);
   mix-blend-mode: multiply;
 }
-[data-theme="dark"] .logo-img {
-  filter: none;
-  mix-blend-mode: screen;
-}
 
 .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--gray-700); text-decoration: none; transition: color 0.2s; }
@@ -177,22 +135,6 @@ nav .container { display: grid; grid-template-columns: 1fr auto 1fr; align-items
 }
 .lang-btn.active { background: var(--bg); color: var(--black); font-weight: 700; }
 .lang-btn:hover:not(.active) { color: var(--black); }
-
-/* Theme toggle */
-.theme-toggle {
-  background: none; border: 1px solid var(--gray-100); border-radius: 8px;
-  width: 38px; height: 38px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--gray-700); transition: all 0.2s; flex-shrink: 0;
-}
-.theme-toggle:hover { border-color: var(--gray-300); color: var(--black); }
-.theme-toggle svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.theme-toggle .icon-sun { display: none; }
-.theme-toggle .icon-moon { display: block; }
-[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-
-
 
 .hero-brand { margin: 20px 0 8px; }
 .hero-brand-label {
@@ -341,17 +283,12 @@ section { padding: 80px 0; position: relative; z-index: 1; }
 .method-cat-list li { font-size: 13px; color: var(--gray-700); line-height: 1.5; padding-left: 14px; position: relative; }
 .method-cat-list li::before { content: '–'; position: absolute; left: 0; color: var(--gray-300); }
 .method-insight { background: var(--black); color: var(--bg); border-radius: 12px; padding: 40px 48px; display: flex; gap: 48px; align-items: center; }
-[data-theme="dark"] .method-insight { background: rgba(35,35,40,0.95); border: 1px solid var(--gray-100); }
 .method-insight-quote { flex: 2; display: flex; gap: 20px; }
 .method-insight-mark { font-size: 64px; line-height: 0.8; color: var(--gray-700); font-family: Georgia, serif; flex-shrink: 0; margin-top: 8px; }
 .method-insight-text { font-size: 16px; line-height: 1.7; color: var(--gray-300); }
-[data-theme="dark"] .method-insight-text { color: #a0a0a0; }
 .method-insight-result { flex: 1; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 48px; }
-[data-theme="dark"] .method-insight-result { border-color: var(--gray-300); }
 .method-insight-result-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray-700); margin-bottom: 12px; }
-[data-theme="dark"] .method-insight-result-label { color: #666; }
 .method-insight-result-val { font-size: 17px; font-weight: 600; color: var(--bg); line-height: 1.5; }
-[data-theme="dark"] .method-insight-result-val { color: #e0e0e0; }
 
 
 /* AIMother merged case card */
@@ -403,15 +340,12 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   background: var(--black); border-radius: 10px;
   padding: 24px 28px; margin: 20px 0;
 }
-[data-theme="dark"] .aim-insight-strip { background: rgba(255,255,255,0.06); border: 1px solid var(--gray-100); }
 .aim-insight-label {
   font-family: 'JetBrains Mono', monospace; font-size: 11px;
   letter-spacing: 1.5px; text-transform: uppercase;
   color: rgba(255,255,255,0.4); margin-bottom: 10px;
 }
-[data-theme="dark"] .aim-insight-label { color: var(--gray-500); }
 .aim-insight-text { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.85); }
-[data-theme="dark"] .aim-insight-text { color: var(--dark); }
 
 .aim-docs-label {
   font-family: 'JetBrains Mono', monospace; font-size: 11px;
@@ -502,7 +436,6 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   margin-bottom: 20px;
   color: var(--black);
 }
-[data-theme="dark"] .case-icon { background: rgba(255,255,255,0.05); }
 .case-icon svg { width: 28px; height: 28px; stroke: currentColor; stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Featured case icon */
@@ -603,9 +536,6 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   border-radius: 12px; padding: 16px 24px;
   margin-bottom: 40px;
 }
-[data-theme="dark"] .pricing-banner {
-  background: rgba(52,211,153,0.06); border-color: rgba(52,211,153,0.2);
-}
 .pricing-banner-badge {
   background: var(--green); color: #fff;
   font-family: 'JetBrains Mono', monospace;
@@ -613,11 +543,9 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   padding: 8px 14px; border-radius: 8px;
   white-space: nowrap; flex-shrink: 0;
 }
-[data-theme="dark"] .pricing-banner-badge { background: #34d399; color: #04342C; }
 .pricing-banner > span:not(.pricing-banner-badge) {
   font-size: 15px; font-weight: 600; color: var(--black); line-height: 1.4;
 }
-[data-theme="dark"] .pricing-banner > span:not(.pricing-banner-badge) { color: #e0e0e0; }
 .pricing-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 16px; margin-bottom: 24px;
@@ -634,10 +562,6 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   transform: translateY(-3px);
 }
 .pricing-card--accent { border-color: rgba(5,150,105,0.25); }
-[data-theme="dark"] .pricing-card--accent {
-  border-color: rgba(52,211,153,0.25);
-  background: rgba(52,211,153,0.03);
-}
 .pricing-card-badge {
   display: inline-block; width: fit-content;
   font-family: 'JetBrains Mono', monospace;
@@ -646,9 +570,6 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   background: var(--green-soft); color: var(--green);
   padding: 4px 10px; border-radius: 100px;
   margin-bottom: 14px;
-}
-[data-theme="dark"] .pricing-card-badge {
-  background: rgba(52,211,153,0.1); color: #34d399;
 }
 .pricing-card-title {
   font-size: 17px; font-weight: 700;
@@ -684,11 +605,8 @@ section { padding: 80px 0; position: relative; z-index: 1; }
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
-[data-theme="dark"] .pricing-btn:hover { box-shadow: 0 4px 12px rgba(255,255,255,0.06); }
 .pricing-btn--green { background: var(--green); color: #fff; }
 .pricing-btn--green:hover { background: #047857; box-shadow: 0 4px 16px rgba(5,150,105,0.3); }
-[data-theme="dark"] .pricing-btn--green { background: #34d399; color: #04342C; }
-[data-theme="dark"] .pricing-btn--green:hover { background: #5eead4; }
 .pricing-note { font-size: 13px; color: var(--gray-500); text-align: center; }
 @media (max-width: 1024px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
@@ -708,13 +626,6 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 .footer-info a:hover { color: var(--black); }
 
 /* === DARK OVERRIDES === */
-[data-theme="dark"] .independence { background: rgba(35,35,40,0.95); border: 1px solid var(--gray-100); color: #e0e0e0; }
-[data-theme="dark"] .independence h3 { color: #f0f0f0; }
-[data-theme="dark"] .independence p, [data-theme="dark"] .ind-point-text { color: #a0a0a0; }
-[data-theme="dark"] .ind-point-text strong { color: #e0e0e0; }
-[data-theme="dark"] .ind-check { background: rgba(52,211,153,0.15); color: #34d399; }
-[data-theme="dark"] .team-avatar { background: var(--gray-300); color: var(--bg); }
-[data-theme="dark"] .btn-primary:hover { box-shadow: 0 4px 12px rgba(255,255,255,0.08); }
 
 /* === CANVAS === */
 #nn-canvas {
@@ -817,95 +728,45 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 <!-- NAV -->
 <nav>
   <div class="container">
-    <div class="logo-stack">
-      <span class="logo-stack-name">SELZIO</span>
-      <span class="logo-stack-sub t-ru">Студия ИИ продуктов</span>
-      <span class="logo-stack-sub t-sr">AI Product Studio</span>
-      <span class="logo-stack-sub t-en">AI Product Studio</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#forwho">
-        <span class="t-ru">Для кого</span>
-        <span class="t-sr">Za koga</span>
-        <span class="t-en">For whom</span>
-      </a></li>
-      <li><a href="#process">
-        <span class="t-ru">Подход</span>
-        <span class="t-sr">Pristup</span>
-        <span class="t-en">Approach</span>
-      </a></li>
-      <li><a href="#cases">
-        <span class="t-ru">AI продукты</span>
-        <span class="t-sr">AI proizvodi</span>
-        <span class="t-en">AI Products</span>
-      </a></li>
-      <li><a href="#sites">
-        <span class="t-ru">Сайты</span>
-        <span class="t-sr">Sajtovi</span>
-        <span class="t-en">Sites</span>
-      </a></li>
-      <li><a href="#whatyouget">
-        <span class="t-ru">Результат</span>
-        <span class="t-sr">Rezultat</span>
-        <span class="t-en">Result</span>
-      </a></li>
-    </ul>
+    <a class="logo-stack" href="./" aria-label="SELZIO — главная">
+      <span class="logo-lockup" aria-hidden="true">
+        <img class="logo-wordmark" src="assets/selzio-wordmark-navy.png?v=2" alt="">
+      </span>
+    </a>
     <div class="nav-controls">
-      <div class="lang-switcher">
-        <button class="lang-btn active" onclick="setLang(&#39;ru&#39;)">RU</button>
-        <button class="lang-btn" onclick="setLang(&#39;sr&#39;)">SR</button>
-        <button class="lang-btn" onclick="setLang(&#39;en&#39;)">EN</button>
+      <div class="lang-switcher" aria-label="Language">
+        <button type="button" class="lang-btn active" onclick="setLang(&#39;ru&#39;)" aria-label="Русский">RU</button>
+        <button type="button" class="lang-btn" onclick="setLang(&#39;sr&#39;)" aria-label="Srpski">SR</button>
+        <button type="button" class="lang-btn" onclick="setLang(&#39;en&#39;)" aria-label="English">EN</button>
       </div>
-      <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
-        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <button class="burger" aria-label="Menu" onclick="toggleMenu()">
-        <svg class="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        <svg class="icon-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
     </div>
   </div>
 </nav>
-
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#forwho" onclick="closeMenu()"><span class="t-ru">Для кого</span><span class="t-sr">Za koga</span><span class="t-en">For whom</span></a>
-  <a href="#process" onclick="closeMenu()"><span class="t-ru">Подход</span><span class="t-sr">Pristup</span><span class="t-en">Approach</span></a>
-  <a href="#cases" onclick="closeMenu()"><span class="t-ru">AI продукты</span><span class="t-sr">AI proizvodi</span><span class="t-en">AI Products</span></a>
-  <a href="#sites" onclick="closeMenu()"><span class="t-ru">Сайты</span><span class="t-sr">Sajtovi</span><span class="t-en">Sites</span></a>
-  <a href="#whatyouget" onclick="closeMenu()"><span class="t-ru">Результат</span><span class="t-sr">Rezultat</span><span class="t-en">Result</span></a>
-  <div class="lang-switcher">
-    <button class="lang-btn" onclick="setLang('ru')">RU</button>
-    <button class="lang-btn" onclick="setLang('sr')">SR</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-  </div>
-</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
 <div class="hero-badge">
-      <span class="t-ru">Разработка · Поддержка · Развитие</span>
-      <span class="t-sr">Razvoj · Podrška · Unapređenje</span>
-      <span class="t-en">Development · Support · Growth</span>
+      <span class="t-ru">AI‑напарники · навыки разработчика · контроль компании</span>
+      <span class="t-sr">AI saradnici · veštine programera · kontrola kompanije</span>
+      <span class="t-en">AI teammates · developer skills · company control</span>
     </div>
 <h1>
-      <span class="t-ru">Превращаем вашу идею в&nbsp;AI‑продукт</span>
-      <span class="t-sr">Pretvaramo vašu ideju u&nbsp;AI‑proizvod</span>
-      <span class="t-en">We turn your idea into an&nbsp;AI&nbsp;product</span>
+      <span class="t-ru">Как внедрить ИИ в процессы компании?</span>
+      <span class="t-sr">Kako uvesti AI u procese kompanije?</span>
+      <span class="t-en">How can you adopt AI across company processes?</span>
     </h1>
     <p class="hero-sub">
-      <span class="t-ru">Разберёмся что нужно, спроектируем и построим. Вы получите продукт, который сможете развивать самостоятельно.</span>
-      <span class="t-sr">Razjašnjavamo šta je potrebno, projektujemo i gradimo. Dobijate proizvod koji možete razvijati samostalno.</span>
-      <span class="t-en">We figure out what's needed, design and build. You get a product you can grow independently.</span>
+      <span class="t-ru"><strong>Дайте каждому сотруднику AI‑напарника с навыками разработчика.</strong> Сотрудники уже знают процессы и могут своими словами поручать AI‑напарнику создание нужных инструментов и автоматизаций. Изменения начинаются изнутри компании — без перестройки привычной работы.</span>
+      <span class="t-sr"><strong>Dajte svakom zaposlenom AI saradnika sa veštinama programera.</strong> Zaposleni već poznaju procese i mogu svojim rečima da zadaju izradu potrebnih alata i automatizacija. Promene počinju unutar kompanije — bez menjanja poznatog načina rada.</span>
+      <span class="t-en"><strong>Give every employee an AI teammate with developer skills.</strong> Employees already know the processes and can ask—in their own words—for the tools and automations they need. Change begins inside the company, without rebuilding familiar ways of working.</span>
     </p>
 
     <div class="hero-actions">
       <a href="https://t.me/ishmakof" class="btn-primary">
-        <span class="t-ru">Рассказать идею →</span>
-        <span class="t-sr">Ispričajte ideju →</span>
-        <span class="t-en">Tell us your idea →</span>
+        <span class="t-ru">Обсудить внедрение →</span>
+        <span class="t-sr">Razgovarajmo o uvođenju →</span>
+        <span class="t-en">Discuss adoption →</span>
       </a>
     </div>
   </div>
@@ -916,85 +777,55 @@ footer .container { display: flex; justify-content: space-between; align-items: 
   <div class="container">
     <div class="proof-strip-inner">
       <div class="proof-item">
-        <div class="proof-num">5 <span class="t-ru">дней</span><span class="t-sr">dana</span><span class="t-en">days</span></div>
-        <div class="proof-label t-ru">до рабочей версии</div>
-        <div class="proof-label t-sr">do radne verzije</div>
-        <div class="proof-label t-en">to working version</div>
+        <div class="proof-num"><span class="t-ru">Сотрудник знает процесс</span><span class="t-sr">Zaposleni poznaje proces</span><span class="t-en">The employee knows the process</span></div>
+        <div class="proof-label t-ru">не нужно сначала объяснять работу внешней команде</div>
+        <div class="proof-label t-sr">nije potrebno prvo objašnjavati posao spoljnom timu</div>
+        <div class="proof-label t-en">no need to explain the work to an outside team first</div>
       </div>
       <div class="proof-strip-div"></div>
       <div class="proof-item">
-        <div class="proof-num">10×</div>
-        <div class="proof-label t-ru">быстрее классической разработки</div>
-        <div class="proof-label t-sr">brže od klasičnog razvoja</div>
-        <div class="proof-label t-en">faster than classic development</div>
+        <div class="proof-num"><span class="t-ru">AI‑напарник умеет создавать</span><span class="t-sr">Saradnik ume da gradi</span><span class="t-en">The teammate knows how to build</span></div>
+        <div class="proof-label t-ru">превращает задачу в инструмент или автоматизацию</div>
+        <div class="proof-label t-sr">pretvara zadatak u alat ili automatizaciju</div>
+        <div class="proof-label t-en">turns the task into a tool or automation</div>
       </div>
       <div class="proof-strip-div"></div>
       <div class="proof-item proof-partner">
-        <div class="proof-num"><svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="proof-partner-icon"><path d="M44.27 19.57a11.87 11.87 0 0 0-1.02-9.73 12.01 12.01 0 0 0-12.9-5.76A11.87 11.87 0 0 0 21.4 0a12.01 12.01 0 0 0-11.46 8.32 11.87 11.87 0 0 0-7.93 5.76 12.01 12.01 0 0 0 1.48 14.06 11.87 11.87 0 0 0 1.02 9.73 12.01 12.01 0 0 0 12.9 5.76A11.87 11.87 0 0 0 26.6 48a12.01 12.01 0 0 0 11.46-8.33 11.87 11.87 0 0 0 7.93-5.76 12.01 12.01 0 0 0-1.72-14.34zM26.61 44.9a8.9 8.9 0 0 1-5.71-2.06l.28-.16 9.48-5.47a1.58 1.58 0 0 0 .79-1.36v-13.36l4.01 2.31a.14.14 0 0 1 .08.11v11.07a8.94 8.94 0 0 1-8.93 8.92zm-19.19-8.2a8.9 8.9 0 0 1-1.06-5.98l.28.17 9.48 5.47a1.58 1.58 0 0 0 1.58 0l11.57-6.68v4.62a.14.14 0 0 1-.06.13l-9.59 5.54a8.94 8.94 0 0 1-12.2-3.27zm-2.5-19.65a8.9 8.9 0 0 1 4.65-3.92v11.22a1.58 1.58 0 0 0 .79 1.36l11.57 6.68-4.01 2.31a.14.14 0 0 1-.14 0L7.62 28.6a8.94 8.94 0 0 1-2.7-11.55zm32.94 7.67L26.29 18.04l4.01-2.31a.14.14 0 0 1 .14 0l10.15 5.86a8.93 8.93 0 0 1-1.38 16.1V26.47a1.58 1.58 0 0 0-.85-1.75zm3.99-6.01l-.28-.17-9.48-5.47a1.58 1.58 0 0 0-1.58 0L19.34 19.75v-4.62a.14.14 0 0 1 .06-.13l9.59-5.53a8.93 8.93 0 0 1 13.26 9.24zm-25.1 8.26-4.01-2.31a.14.14 0 0 1-.08-.11V13.48a8.93 8.93 0 0 1 14.64-6.86l-.28.16-9.48 5.47a1.58 1.58 0 0 0-.79 1.36v13.36zm2.18-4.7 5.15-2.97 5.15 2.97v5.94l-5.15 2.97-5.15-2.97V22.27z"></path></svg></div>
-        <div class="proof-label t-ru">OpenAI Partners</div>
-        <div class="proof-label t-sr">OpenAI Partners</div>
-        <div class="proof-label t-en">OpenAI Partners</div>
+        <div class="proof-num"><span class="t-ru">Компания владеет результатом</span><span class="t-sr">Kompanija poseduje rezultat</span><span class="t-en">The company owns the result</span></div>
+        <div class="proof-label t-ru">код, инструкции и накопленный контекст остаются внутри</div>
+        <div class="proof-label t-sr">kod, uputstva i prikupljeni kontekst ostaju unutra</div>
+        <div class="proof-label t-en">code, documentation and accumulated context stay inside</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOR WHOM -->
-<section class="forwho" id="forwho">
+<!-- EMPLOYEE STORY -->
+<section class="forwho employee-story" id="forwho">
   <div class="container">
-    <div class="section-label t-ru">Для кого</div>
-    <div class="section-label t-sr">Za koga</div>
-    <div class="section-label t-en">For whom</div>
-    <div class="section-title">
-      <span class="t-ru">Узнайте свою ситуацию</span>
-      <span class="t-sr">Prepoznajte svoju situaciju</span>
-      <span class="t-en">Recognize your situation</span>
-    </div>
-    <div class="section-desc">
-      <span class="t-ru">Мы работаем с теми, кто хочет использовать AI в бизнесе, но не знает с чего начать — или уже пробовал и не получил результат.</span>
-      <span class="t-sr">Radimo s onima koji žele koristiti AI u poslovanju, ali ne znaju odakle početi — ili su već probali i nisu dobili rezultat.</span>
-      <span class="t-en">We work with those who want to use AI in business but don't know where to start — or have tried and haven't gotten results.</span>
-    </div>
-    <div class="whom-grid">
-      <div class="whom-card">
-        <div class="whom-emoji"><svg viewBox="0 0 24 24"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"></path></svg></div>
-        <div class="whom-quote">
-          <span class="t-ru">«Хочу внедрить AI, но не понимаю с чего начать»</span>
-          <span class="t-sr">«Želim uvesti AI, ali ne znam odakle početi»</span>
-          <span class="t-en">"I want to implement AI but don't know where to start"</span>
-        </div>
-        <div class="whom-desc">
-          <span class="t-ru">Вы слышали что AI может помочь с продажами, поддержкой, рутиной. Но не знаете — что конкретно вам нужно. Мы разберёмся и покажем.</span>
-          <span class="t-sr">Čuli ste da AI može pomoći s prodajom, podrškom, rutinom. Ali ne znate — šta vam konkretno treba. Mi ćemo to razjasniti i pokazati.</span>
-          <span class="t-en">You've heard AI can help with sales, support, routine tasks. But you don't know what exactly you need. We'll figure it out and show you.</span>
+    <div class="story-layout">
+      <div class="story-intro">
+        <h2 class="section-title">
+          <span class="t-ru">Так внедрение начинается с обычной рабочей ситуации</span>
+          <span class="t-sr">Tako uvođenje počinje iz obične radne situacije</span>
+          <span class="t-en">Adoption begins with an everyday work situation</span>
+        </h2>
+        <div class="section-desc">
+          <span class="t-ru">Идею не нужно искать снаружи. Она появляется там, где сотрудник каждый день сталкивается с рутиной, потерями времени и ошибками.</span>
+          <span class="t-sr">Ideju ne morate tražiti spolja. Ona nastaje tamo gde se zaposleni svakodnevno susreće sa rutinom, gubitkom vremena i greškama.</span>
+          <span class="t-en">The idea does not need to come from outside. It appears where an employee encounters routine, wasted time and errors every day.</span>
         </div>
       </div>
-      <div class="whom-card">
-        <div class="whom-emoji"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
-        <div class="whom-quote">
-          <span class="t-ru">«Есть идея продукта — нужен кто-то, кто построит»</span>
-          <span class="t-sr">«Imam ideju za proizvod — treba mi neko ko će ga izgraditi»</span>
-          <span class="t-en">"I have a product idea — I need someone to build it"</span>
-        </div>
-        <div class="whom-desc">
-          <span class="t-ru">У вас есть видение AI-продукта, но нет технической команды. Нанимать агентство рано, делать самому — не получается. Мы превратим идею в рабочий продукт.</span>
-          <span class="t-sr">Imate viziju AI proizvoda, ali nemate tehničkig tima. Prerano je za agenciju, sami ne uspevate. Mi ćemo pretvoriti ideju u radni proizvod.</span>
-          <span class="t-en">You have an AI product vision but no technical team. Too early for an agency, can't do it yourself. We'll turn the idea into a working product.</span>
-        </div>
+      <div class="story-main">
+        <div class="story-role"><span class="t-ru">Например, менеджер отдела продаж</span><span class="t-sr">Na primer, menadžer prodaje</span><span class="t-en">For example, a sales manager</span></div>
+        <blockquote><span class="t-ru">«Каждый понедельник я вручную собираю данные из трёх таблиц. Хочу получать готовый отчёт за минуту».</span><span class="t-sr">„Svakog ponedeljka ručno spajam podatke iz tri tabele. Želim gotov izveštaj za minut.“</span><span class="t-en">“Every Monday I combine data from three spreadsheets by hand. I want the finished report in one minute.”</span></blockquote>
+        <p><span class="t-ru">Он рассказывает AI‑напарнику, откуда берутся данные и каким должен быть результат. Этого достаточно, чтобы начать создавать решение.</span><span class="t-sr">On saradniku objašnjava odakle dolaze podaci i kakav rezultat očekuje. To je dovoljno da izrada rešenja počne.</span><span class="t-en">They explain where the data comes from and what the result should look like. That is enough to begin building the solution.</span></p>
       </div>
-      <div class="whom-card">
-        <div class="whom-emoji"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
-        <div class="whom-quote">
-          <span class="t-ru">«Нанимали разработчиков — получили код, но не продукт»</span>
-          <span class="t-sr">«Angažovali smo programere — dobili smo kod, ali ne i proizvod»</span>
-          <span class="t-en">"We hired developers — got code, but not a product"</span>
-        </div>
-        <div class="whom-desc">
-          <span class="t-ru">Бот работает, но задачу не решает. Сайт есть, но клиентов не приводит. Проблема не в коде — никто не подумал о продукте до разработки.</span>
-          <span class="t-sr">Bot radi, ali ne rešava problem. Sajt postoji, ali ne donosi klijente. Problem nije u kodu — niko nije razmislio o proizvodu pre razvoja.</span>
-          <span class="t-en">The bot works but doesn't solve the task. The site exists but brings no clients. The problem isn't the code — nobody thought about the product before building.</span>
-        </div>
-      </div>
+      <ol class="story-steps">
+        <li><span class="story-num">01</span><div><strong><span class="t-ru">Замечает рутину</span><span class="t-sr">Primećuje rutinu</span><span class="t-en">Notices the routine</span></strong><p><span class="t-ru">Сотрудник лучше всех видит, где теряются время и внимание.</span><span class="t-sr">Zaposleni najbolje vidi gde se gube vreme i pažnja.</span><span class="t-en">The employee sees where time and attention are lost.</span></p></div></li>
+        <li><span class="story-num">02</span><div><strong><span class="t-ru">Получает свой инструмент</span><span class="t-sr">Dobija sopstveni alat</span><span class="t-en">Gets their own tool</span></strong><p><span class="t-ru">AI‑напарник создаёт решение и просит только необходимые подключения.</span><span class="t-sr">Saradnik pravi rešenje i traži samo potrebne veze.</span><span class="t-en">The teammate builds the solution and requests only the connections required.</span></p></div></li>
+        <li><span class="story-num">03</span><div><strong><span class="t-ru">Делится рабочим результатом</span><span class="t-sr">Deli radni rezultat</span><span class="t-en">Shares a working result</span></strong><p><span class="t-ru">Успешный инструмент становится понятным примером для других сотрудников отдела.</span><span class="t-sr">Uspešan alat postaje jasan primer za druge zaposlene u odeljenju.</span><span class="t-en">A successful tool becomes a clear example for other employees in the department.</span></p></div></li>
+      </ol>
     </div>
   </div>
 </section>
@@ -1002,72 +833,103 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
-    <div class="section-label t-ru">Подход</div>
-    <div class="section-label t-sr">Pristup</div>
-    <div class="section-label t-en">Approach</div>
-    <div class="section-title">
-      <span class="t-ru">Сначала думаем — потом строим</span>
-      <span class="t-sr">Prvo razmišljamo — onda gradimo</span>
-      <span class="t-en">Think first — then build</span>
-    </div>
+    <div class="section-label t-ru">Как это работает</div>
+    <div class="section-label t-sr">Kako funkcioniše</div>
+    <div class="section-label t-en">How it works</div>
+    <h2 class="section-title">
+      <span class="t-ru">От рабочего процесса до готовой автоматизации</span>
+      <span class="t-sr">Od radnog procesa do gotove automatizacije</span>
+      <span class="t-en">From a work process to ready automation</span>
+    </h2>
     <div class="section-desc">
-      <span class="t-ru">Мы не начинаем с кода. Мы начинаем с вопросов — чтобы не тратить ваши деньги на то, что не нужно.</span>
-      <span class="t-sr">Ne počinjemo s kodom. Počinjemo s pitanjima — da ne trošimo vaš novac na ono što nije potrebno.</span>
-      <span class="t-en">We don't start with code. We start with questions — so we don't waste your money on what's not needed.</span>
+      <span class="t-ru">Сотрудник ставит задачу, AI‑напарник создаёт решение, а компания контролирует доступы и подтверждает запуск.</span>
+      <span class="t-sr">Zaposleni postavlja zadatak, AI saradnik pravi rešenje, a kompanija kontroliše pristupe i odobrava pokretanje.</span>
+      <span class="t-en">The employee sets the task, the AI teammate builds the solution, and the company controls access and approves the launch.</span>
     </div>
     <div class="process-grid">
       <div class="process-step">
         <div class="step-num">01</div>
         <div class="step-title">
-          <span class="t-ru">Исследуем, прежде чем строить</span>
-          <span class="t-sr">Istražujemo pre nego što gradimo</span>
-          <span class="t-en">Research before building</span>
+          <span class="t-ru">Сотрудник описывает процесс</span>
+          <span class="t-sr">Zaposleni opisuje proces</span>
+          <span class="t-en">The employee describes the process</span>
         </div>
         <div class="step-desc">
-          <span class="t-ru">Изучаем ваш бизнес и клиентов: какую задачу они решают, за что готовы платить, где теряются по дороге к покупке. Находим «точку боли» — то место, где AI действительно изменит результат.</span>
-          <span class="t-sr">Proučavamo vaše poslovanje i klijente: koji problem rešavaju, za šta su spremni platiti, gde se gube na putu do kupovine. Nalazimo "tačku bola" — gde AI zaista menja rezultat.</span>
-          <span class="t-en">We study your business and customers: what task they solve, what they'll pay for, where they drop off. We find the pain point where AI will actually change the outcome.</span>
+          <span class="t-ru">Рассказывает, как работает сейчас и какой результат хочет получить. Техническое задание и знание программирования не нужны.</span>
+          <span class="t-sr">Objašnjava kako danas radi i kakav rezultat želi da dobije. Tehnički zahtev i znanje programiranja nisu potrebni.</span>
+          <span class="t-en">They explain how they work today and what result they want. No technical specification or programming knowledge is required.</span>
         </div>
         <div class="step-result">
-          <span class="t-ru">→ Понимание: что строить, для кого и зачем</span>
-          <span class="t-sr">→ Razumevanje: šta graditi, za koga i zašto</span>
-          <span class="t-en">→ Understanding: what to build, for whom and why</span>
+          <span class="t-ru">Понятная рабочая задача вместо длинного ТЗ</span>
+          <span class="t-sr">Jasan radni zadatak umesto dugog tehničkog zahteva</span>
+          <span class="t-en">A clear work task instead of a long specification</span>
         </div>
       </div>
       <div class="process-step">
         <div class="step-num">02</div>
         <div class="step-title">
-          <span class="t-ru">Проектируем продукт</span>
-          <span class="t-sr">Projektujemo proizvod</span>
-          <span class="t-en">Design the product</span>
+          <span class="t-ru">AI‑напарник создаёт решение</span>
+          <span class="t-sr">AI saradnik pravi rešenje</span>
+          <span class="t-en">The AI teammate builds the solution</span>
         </div>
         <div class="step-desc">
-          <span class="t-ru">Описываем весь путь пользователя: как он узнаёт о продукте, что видит, что делает, где может уйти. Проектируем каждый экран и сценарий. Проверяем — решает ли это задачу бизнеса, прежде чем писать код.</span>
-          <span class="t-sr">Opisujemo cijeli put korisnika: kako saznaje o proizvodu, šta vidi, šta radi, gde može otići. Projektujemo svaki ekran i scenario. Proveravamo — da li ovo rešava poslovni problem pre pisanja koda.</span>
-          <span class="t-en">We map the full user journey: how they discover the product, what they see, do, where they drop off. We design every screen and scenario. We verify it solves the business problem before writing code.</span>
+          <span class="t-ru">Сам выбирает подход и запрашивает необходимые вебхуки, API‑ключи и подключения. Сотрудник не может выдать ему больше прав, чем имеет сам, а изоляция защищает остальные системы.</span>
+          <span class="t-sr">Sam bira pristup i traži potrebne vebhukove, API ključeve i veze. Zaposleni mu ne može dati više prava nego što ih sam ima, a izolacija štiti ostale sisteme.</span>
+          <span class="t-en">It chooses the approach and requests the webhooks, API keys and connections it needs. An employee cannot grant more access than they have, while isolation protects the other systems.</span>
         </div>
         <div class="step-result">
-          <span class="t-ru">→ Спецификация: что строим и как это работает</span>
-          <span class="t-sr">→ Specifikacija: šta gradimo i kako to funkcioniše</span>
-          <span class="t-en">→ Specification: what we build and how it works</span>
+          <span class="t-ru">Навыки разработчика в пределах подтверждённых прав</span>
+          <span class="t-sr">Veštine programera u okviru potvrđenih prava</span>
+          <span class="t-en">Developer skills within approved permissions</span>
         </div>
       </div>
       <div class="process-step">
         <div class="step-num">03</div>
         <div class="step-title">
-          <span class="t-ru">Строим и передаём вам</span>
-          <span class="t-sr">Gradimo i predajemo vam</span>
-          <span class="t-en">Build and hand over</span>
+          <span class="t-ru">Сотрудник проверяет — компания получает результат</span>
+          <span class="t-sr">Zaposleni proverava — kompanija dobija rezultat</span>
+          <span class="t-en">The employee checks — the company gets the result</span>
         </div>
         <div class="step-desc">
-          <span class="t-ru">Разрабатываем рабочий AI-продукт, тестируем на реальных сценариях. Передаём с документацией и объяснениями — чтобы вы могли развивать его самостоятельно.</span>
-          <span class="t-sr">Razvijamo radni AI proizvod, testiramo na realnim scenarijima. Predajemo s dokumentacijom i objašnjenjima — da ga možete razvijati samostalno.</span>
-          <span class="t-en">We build a working AI product, test it on real scenarios. We hand it over with documentation and explanations — so you can develop it independently.</span>
+          <span class="t-ru">AI‑напарник показывает решение, сотрудник проверяет его на реальных примерах. После подтверждения компания разрешает запуск инструмента.</span>
+          <span class="t-sr">AI saradnik pokazuje rešenje, a zaposleni ga proverava na stvarnim primerima. Nakon potvrde kompanija odobrava pokretanje alata.</span>
+          <span class="t-en">The AI teammate presents the solution and the employee checks it with real examples. Once approved, the company authorizes the tool’s launch.</span>
         </div>
         <div class="step-result">
-          <span class="t-ru">→ Работающий продукт за 7–14 дней</span>
-          <span class="t-sr">→ Radni proizvod za 7–14 dana</span>
-          <span class="t-en">→ Working product in 7–14 days</span>
+          <span class="t-ru">Проверенное решение можно безопасно использовать и развивать</span>
+          <span class="t-sr">Provereno rešenje može bezbedno da se koristi i razvija</span>
+          <span class="t-en">The verified solution can be used safely and developed further</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="employee-motivation">
+      <div class="motivation-intro">
+        <div class="section-label">
+          <span class="t-ru">Почему сотрудники включаются</span>
+          <span class="t-sr">Zašto se zaposleni uključuju</span>
+          <span class="t-en">Why employees engage</span>
+        </div>
+        <h3>
+          <span class="t-ru">Сотрудник улучшает работу прежде всего для себя</span>
+          <span class="t-sr">Zaposleni pre svega unapređuje sopstveni rad</span>
+          <span class="t-en">An employee improves their own work first</span>
+        </h3>
+        <p>
+          <span class="t-ru">Инициатива исходит от самого сотрудника: он выбирает, какую часть своей работы хочет улучшить, и контролирует полученный результат.</span>
+          <span class="t-sr">Inicijativa dolazi od samog zaposlenog: on bira koji deo svog posla želi da unapredi i kontroliše dobijeni rezultat.</span>
+          <span class="t-en">The initiative comes from the employee: they choose which part of their work to improve and remain in control of the result.</span>
+        </p>
+      </div>
+      <div class="motivation-points">
+        <div class="motivation-point">
+          <div><strong><span class="t-ru">Личная польза</span><span class="t-sr">Lična korist</span><span class="t-en">Personal benefit</span></strong><p><span class="t-ru">Меньше рутины и ошибок, больше времени на содержательную работу.</span><span class="t-sr">Manje rutine i grešaka, više vremena za smislen posao.</span><span class="t-en">Less routine and fewer errors, with more time for meaningful work.</span></p></div>
+        </div>
+        <div class="motivation-point">
+          <div><strong><span class="t-ru">Сам определяет качество</span><span class="t-sr">Sam određuje kvalitet</span><span class="t-en">Defines the quality</span></strong><p><span class="t-ru">Сотрудник задаёт ожидаемый результат и проверяет решение на реальных рабочих примерах.</span><span class="t-sr">Zaposleni određuje očekivani rezultat i proverava rešenje na stvarnim radnim primerima.</span><span class="t-en">The employee defines the expected result and verifies the solution with real work examples.</span></p></div>
+        </div>
+        <div class="motivation-point">
+          <div><strong><span class="t-ru">Видит вклад в общий успех</span><span class="t-sr">Vidi svoj doprinos zajedničkom uspehu</span><span class="t-en">Sees their contribution to shared success</span></strong><p><span class="t-ru">Улучшение его работы влияет на результат отдела и компании — сотрудник видит ценность собственной инициативы.</span><span class="t-sr">Unapređenje njegovog rada utiče na rezultat odeljenja i kompanije — zaposleni vidi vrednost sopstvene inicijative.</span><span class="t-en">Improving their work affects the results of the department and the company, making the value of their initiative visible.</span></p></div>
         </div>
       </div>
     </div>
@@ -1075,20 +937,20 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 </section>
 
 <!-- CASES -->
-<section class="cases" id="cases">
+<section class="cases" id="cases" hidden>
   <div class="container">
-    <div class="section-label t-ru">AI продукты</div>
-    <div class="section-label t-sr">AI proizvodi</div>
-    <div class="section-label t-en">AI Products</div>
-    <div class="section-title">
-      <span class="t-ru">Что мы построили</span>
-      <span class="t-sr">Šta smo izgradili</span>
-      <span class="t-en">What we built</span>
-    </div>
+    <div class="section-label t-ru">Примеры решений</div>
+    <div class="section-label t-sr">Primeri rešenja</div>
+    <div class="section-label t-en">Solution examples</div>
+    <h2 class="section-title">
+      <span class="t-ru">Что умеет создавать AI‑напарник</span>
+      <span class="t-sr">Šta AI saradnik može da napravi</span>
+      <span class="t-en">What an AI teammate can build</span>
+    </h2>
     <div class="section-desc">
-      <span class="t-ru">Каждый проект начинался с вопроса «а что на самом деле нужно?» — и только потом код.</span>
-      <span class="t-sr">Svaki projekat je počeo pitanjem «šta je zaista potrebno?» — a tek onda kodom.</span>
-      <span class="t-en">Every project started with "what's actually needed?" — and only then with code.</span>
+      <span class="t-ru">Не просто отвечает в чате, а создаёт рабочие инструменты: интеграции, ботов, отчёты, внутренние интерфейсы и автоматизации.</span>
+      <span class="t-sr">Ne odgovara samo u četu, već pravi radne alate: integracije, botove, izveštaje, interne interfejse i automatizacije.</span>
+      <span class="t-en">It does more than chat: it builds working tools, integrations, bots, reports, internal interfaces and automations.</span>
     </div>
 
     <!-- Featured case (temporarily hidden) -->
@@ -1651,21 +1513,21 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 </section>
 
 <!-- AI PRICING -->
-<section id="ai-pricing" style="padding: 96px 0;">
+<section id="ai-pricing" style="padding: 96px 0;" hidden>
   <div class="container">
-    <div class="section-label t-ru">Стоимость AI</div>
-    <div class="section-label t-sr">Cene AI</div>
-    <div class="section-label t-en">AI Pricing</div>
+    <div class="section-label t-ru">Форматы запуска</div>
+    <div class="section-label t-sr">Formati pokretanja</div>
+    <div class="section-label t-en">Ways to start</div>
     <div class="section-title">
-      <span class="t-ru">AI-продукты</span>
-      <span class="t-sr">AI proizvodi</span>
-      <span class="t-en">AI products</span>
+      <span class="t-ru">Подключите AI‑напарников к команде</span>
+      <span class="t-sr">Povežite AI saradnike sa timom</span>
+      <span class="t-en">Bring AI teammates into the team</span>
     </div>
     <div class="pricing-banner">
       <span class="pricing-banner-badge">−22%</span>
-      <span class="t-ru">Скидка для новых клиентов на первый проект</span>
-      <span class="t-sr">Popust za nove klijente na prvi projekat</span>
-      <span class="t-en">Discount for new clients on the first project</span>
+      <span class="t-ru">Скидка для новых клиентов на первое внедрение</span>
+      <span class="t-sr">Popust za nove klijente na prvo uvođenje</span>
+      <span class="t-en">Discount for new clients on the first implementation</span>
     </div>
     <div class="pricing-grid">
       <div class="pricing-card">
@@ -1690,12 +1552,12 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         </a>
       </div>
       <div class="pricing-card">
-        <div class="pricing-card-title t-ru">AI-продукт под ключ</div>
-        <div class="pricing-card-title t-sr">AI proizvod po ključ</div>
-        <div class="pricing-card-title t-en">AI product, turnkey</div>
-        <div class="pricing-card-desc t-ru">Спроектируем и построим рабочий AI-продукт. С документацией и передачей.</div>
-        <div class="pricing-card-desc t-sr">Projektujemo i gradimo radni AI proizvod. S dokumentacijom i predajom.</div>
-        <div class="pricing-card-desc t-en">We design and build a working AI product. With documentation and handover.</div>
+        <div class="pricing-card-title t-ru">Пилот AI‑напарника</div>
+        <div class="pricing-card-title t-sr">Pilot AI saradnika</div>
+        <div class="pricing-card-title t-en">AI teammate pilot</div>
+        <div class="pricing-card-desc t-ru">Один сотрудник, один реальный процесс и первое рабочее решение. С проверкой, кодом и документацией.</div>
+        <div class="pricing-card-desc t-sr">Jedan zaposleni, jedan stvarni proces i prvo radno rešenje. Uz proveru, kod i dokumentaciju.</div>
+        <div class="pricing-card-desc t-en">One employee, one real process and the first working solution—with validation, code and documentation.</div>
         <div class="pricing-price">
           <span class="pricing-price-val t-ru">от 90&nbsp;000 &#8381;</span>
           <span class="pricing-price-val t-sr">od $1&nbsp;000</span>
@@ -1711,12 +1573,12 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         </a>
       </div>
       <div class="pricing-card">
-        <div class="pricing-card-title t-ru">Полный цикл</div>
-        <div class="pricing-card-title t-sr">Puni ciklus</div>
-        <div class="pricing-card-title t-en">Full cycle</div>
-        <div class="pricing-card-desc t-ru">Исследование рынка, стратегия, продукт, документация. Всё включено.</div>
-        <div class="pricing-card-desc t-sr">Istraživanje tržišta, strategija, proizvod, dokumentacija. Sve uključeno.</div>
-        <div class="pricing-card-desc t-en">Market research, strategy, product, documentation. All included.</div>
+        <div class="pricing-card-title t-ru">Внедрение в команду</div>
+        <div class="pricing-card-title t-sr">Uvođenje u tim</div>
+        <div class="pricing-card-title t-en">Team implementation</div>
+        <div class="pricing-card-desc t-ru">Несколько AI‑напарников, правила доступа, библиотека навыков, обучение сотрудников и сопровождение запуска.</div>
+        <div class="pricing-card-desc t-sr">Više saradnika, pravila pristupa, biblioteka veština, obuka zaposlenih i podrška pri pokretanju.</div>
+        <div class="pricing-card-desc t-en">Multiple teammates, access rules, a shared skill library, employee training and launch support.</div>
         <div class="pricing-price">
           <span class="pricing-price-val t-ru">от 180&nbsp;000 &#8381;</span>
           <span class="pricing-price-val t-sr">od $2&nbsp;000</span>
@@ -1738,9 +1600,9 @@ footer .container { display: flex; justify-content: space-between; align-items: 
         <div class="pricing-card-title t-ru">Консультация</div>
         <div class="pricing-card-title t-sr">Konsultacija</div>
         <div class="pricing-card-title t-en">Consultation</div>
-        <div class="pricing-card-desc t-ru">Разберём вашу задачу и покажем, как AI решит её. Без обязательств.</div>
-        <div class="pricing-card-desc t-sr">Analiziramo vaš zadatak i pokazujemo kako ga AI može rešiti. Bez obaveza.</div>
-        <div class="pricing-card-desc t-en">We'll break down your task and show how AI solves it. No obligations.</div>
+        <div class="pricing-card-desc t-ru">Определим правила доступов, роли сотрудников и формат горизонтального внедрения AI‑напарников в компании.</div>
+        <div class="pricing-card-desc t-sr">Definisaćemo pravila pristupa, uloge zaposlenih i format horizontalnog uvođenja AI saradnika u kompaniji.</div>
+        <div class="pricing-card-desc t-en">We'll define access rules, employee roles and a format for horizontal AI teammate adoption across the company.</div>
         <div class="pricing-price">
           <span class="pricing-price-val t-ru">Бесплатно</span>
           <span class="pricing-price-val t-sr">Besplatno</span>
@@ -1760,7 +1622,7 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 </section>
 
 <!-- SITES -->
-<section class="sites" id="sites">
+<section class="sites" id="sites" hidden>
   <div class="container">
     <div class="section-label t-ru">Портфолио</div>
     <div class="section-label t-sr">Portfolio</div>
@@ -1852,7 +1714,7 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 </section>
 
 <!-- SITES PRICING -->
-<section id="sites-pricing" style="padding: 96px 0;">
+<section id="sites-pricing" style="padding: 96px 0;" hidden>
   <div class="container">
     <div class="section-label t-ru">Стоимость сайтов</div>
     <div class="section-label t-sr">Cene sajtova</div>
@@ -1936,83 +1798,52 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 <!-- WHAT YOU GET -->
 <section id="whatyouget">
   <div class="container">
-    <div class="section-label t-ru">Что вы получите</div>
-    <div class="section-label t-sr">Šta ćete dobiti</div>
-    <div class="section-label t-en">What you get</div>
-    <div class="section-title">
-      <span class="t-ru">Не просто код — а продукт</span>
-      <span class="t-sr">Ne samo kod — već proizvod</span>
-      <span class="t-en">Not just code — a product</span>
-    </div>
+    <div class="section-label t-ru">Результат для собственника</div>
+    <div class="section-label t-sr">Rezultat za vlasnika</div>
+    <div class="section-label t-en">The owner's outcome</div>
+    <h2 class="section-title">
+      <span class="t-ru">Компания получает не отдельные автоматизации, а способность создавать их внутри</span>
+      <span class="t-sr">Kompanija ne dobija pojedinačne automatizacije, već sposobnost da ih stvara iznutra</span>
+      <span class="t-en">The company gains more than separate automations — it gains the ability to create them internally</span>
+    </h2>
     <div class="section-desc">
-      <span class="t-ru">Мы строим так, чтобы после нас у вас осталось не «чёрная коробка», а понятный инструмент.</span>
-      <span class="t-sr">Gradimo tako da vam ne ostane "crna kutija", već razumljiv alat.</span>
-      <span class="t-en">We build so you're left not with a "black box" but a clear tool.</span>
+      <span class="t-ru">Улучшения возникают в разных отделах, но общие правила, контроль и результаты остаются у компании.</span>
+      <span class="t-sr">Unapređenja nastaju u različitim odeljenjima, dok zajednička pravila, kontrola i rezultati ostaju u kompaniji.</span>
+      <span class="t-en">Improvements emerge across departments while shared rules, control and results remain with the company.</span>
     </div>
     <div class="get-grid">
       <div class="get-card">
-        <div class="get-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
-        <div class="get-title t-ru">Быстрая разработка</div>
-        <div class="get-title t-sr">Brz razvoj</div>
-        <div class="get-title t-en">Fast development</div>
+        <div class="get-kicker"><span class="t-ru">Горизонтальное развитие</span><span class="t-sr">Horizontalni razvoj</span><span class="t-en">Horizontal development</span></div>
+        <div class="get-title t-ru">Изменения идут по всей компании</div>
+        <div class="get-title t-sr">Promene se odvijaju širom kompanije</div>
+        <div class="get-title t-en">Change happens across the company</div>
         <div class="get-desc">
-          <span class="t-ru">Мы используем AI в собственной разработке. Это позволяет делать за неделю то, что классическая команда делает за месяц.</span>
-          <span class="t-sr">Koristimo AI u sopstvenom razvoju. Za nedelju dana radimo ono što klasičan tim radi mesec dana.</span>
-          <span class="t-en">We use AI in our own development. This lets us do in a week what a classic team does in a month.</span>
+          <span class="t-ru">Сотрудники разных отделов могут улучшать свои процессы параллельно, не ожидая очереди к единому центру автоматизации.</span>
+          <span class="t-sr">Zaposleni u različitim odeljenjima mogu paralelno da unapređuju svoje procese, bez čekanja na jedan centralni tim za automatizaciju.</span>
+          <span class="t-en">Employees across departments can improve their processes in parallel instead of waiting for one central automation team.</span>
         </div>
       </div>
       <div class="get-card">
-        <div class="get-icon"><svg viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M9 14l2 2 4-4"></path></svg></div>
-        <div class="get-title t-ru">Продуктовое мышление</div>
-        <div class="get-title t-sr">Produktivno razmišljanje</div>
-        <div class="get-title t-en">Product thinking</div>
+        <div class="get-kicker"><span class="t-ru">Контроль</span><span class="t-sr">Kontrola</span><span class="t-en">Control</span></div>
+        <div class="get-title t-ru">Границы задаёт компания</div>
+        <div class="get-title t-sr">Granice određuje kompanija</div>
+        <div class="get-title t-en">The company sets the boundaries</div>
         <div class="get-desc">
-          <span class="t-ru">Мы не просто кодим по ТЗ. Мы проектируем продукт: кто пользователь, зачем ему это, как он получит ценность.</span>
-          <span class="t-sr">Ne samo kodiramo. Projektujemo proizvod: ko je korisnik, zašto mu je to potrebno, kako dobija vrednost.</span>
-          <span class="t-en">We don't just code to specs. We design: who's the user, why they need it, how they get value.</span>
+          <span class="t-ru">Доступы, правила и важные действия остаются под контролем человека. AI‑напарник работает только в подтверждённых пределах.</span>
+          <span class="t-sr">Pristupi, pravila i važne radnje ostaju pod kontrolom čoveka. AI saradnik radi samo u potvrđenim granicama.</span>
+          <span class="t-en">Access, rules and important actions remain under human control. The AI teammate works only within approved boundaries.</span>
         </div>
       </div>
       <div class="get-card">
-        <div class="get-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
-        <div class="get-title t-ru">Архитектура с запасом</div>
-        <div class="get-title t-sr">Arhitektura s rezervom</div>
-        <div class="get-title t-en">Scalable architecture</div>
+        <div class="get-kicker"><span class="t-ru">Собственность</span><span class="t-sr">Vlasništvo</span><span class="t-en">Ownership</span></div>
+        <div class="get-title t-ru">Решения и знания остаются внутри</div>
+        <div class="get-title t-sr">Rešenja i znanje ostaju unutra</div>
+        <div class="get-title t-en">Solutions and knowledge stay inside</div>
         <div class="get-desc">
-          <span class="t-ru">Серверы и инфраструктура настроены под быстрое масштабирование. Ваш продукт готов к росту с первого дня.</span>
-          <span class="t-sr">Serveri postavljeni za brzo skaliranje. Vaš proizvod spreman za rast od prvog dana.</span>
-          <span class="t-en">Infrastructure set up for rapid scaling. Your product is ready to grow from day one.</span>
+          <span class="t-ru">Компания получает код, настройки, документацию и накопленный контекст. Успешные инструменты можно повторять и развивать.</span>
+          <span class="t-sr">Kompanija dobija kod, podešavanja, dokumentaciju i prikupljeni kontekst. Uspešni alati mogu da se ponavljaju i razvijaju.</span>
+          <span class="t-en">The company receives the code, configuration, documentation and accumulated context. Successful tools can be reused and developed further.</span>
         </div>
-      </div>
-      <div class="get-card">
-        <div class="get-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-        <div class="get-title t-ru">Стратегия, а не только код</div>
-        <div class="get-title t-sr">Strategija, a ne samo kod</div>
-        <div class="get-title t-en">Strategy, not just code</div>
-        <div class="get-desc">
-          <span class="t-ru">Помогаем не только построить, но и продать. Позиционирование, воронки продаж, план выхода на рынок — чтобы продукт приносил деньги.</span>
-          <span class="t-sr">Pomažemo i da prodate. Pozicioniranje, prodajni funneli, plan izlaska na tržište — da bi proizvod donosio novac.</span>
-          <span class="t-en">We help not just build, but sell. Positioning, sales funnels, plan to reach the market — so the product makes money.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="independence">
-      <div class="independence-text">
-        <h3>
-          <span class="t-ru">Развивайте самостоятельно</span>
-          <span class="t-sr">Razvijajte samostalno</span>
-          <span class="t-en">Grow it independently</span>
-        </h3>
-        <p>
-          <span class="t-ru">Мы строим так, чтобы вы не зависели от нас. Понятный стек, документация, передача знаний — ваш продукт останется вашим.</span>
-          <span class="t-sr">Gradimo tako da ne zavisite od nas. Jasan stek, dokumentacija, prenos znanja.</span>
-          <span class="t-en">We build so you don't depend on us. Clear stack, documentation, knowledge transfer.</span>
-        </p>
-      </div>
-      <div class="independence-points">
-        <div class="ind-point"><div class="ind-check">✓</div><div class="ind-point-text"><strong class="t-ru">Понятный стек</strong><strong class="t-sr">Jasan stek</strong><strong class="t-en">Clear stack</strong><span class="t-ru"> — любой разработчик подхватит.</span><span class="t-sr"> — svaki programer može preuzeti.</span><span class="t-en"> — any developer can pick it up.</span></div></div>
-        <div class="ind-point"><div class="ind-check">✓</div><div class="ind-point-text"><strong class="t-ru">Документация</strong><strong class="t-sr">Dokumentacija</strong><strong class="t-en">Documentation</strong><span class="t-ru"> — что сделано, почему так, как менять.</span><span class="t-sr"> — šta je urađeno, zašto, kako menjati.</span><span class="t-en"> — what's done, why, how to change it.</span></div></div>
-        <div class="ind-point"><div class="ind-check">✓</div><div class="ind-point-text"><strong class="t-ru">Передача знаний</strong><strong class="t-sr">Prenos znanja</strong><strong class="t-en">Knowledge transfer</strong><span class="t-ru"> — объясним вашей команде.</span><span class="t-sr"> — objasnićemo vašem timu.</span><span class="t-en"> — we'll explain to your team.</span></div></div>
       </div>
     </div>
   </div>
@@ -2025,63 +1856,55 @@ footer .container { display: flex; justify-content: space-between; align-items: 
     <div class="section-label t-ru">Первый шаг</div>
     <div class="section-label t-sr">Prvi korak</div>
     <div class="section-label t-en">First step</div>
-    <div class="cta-title">
-      <span class="t-ru">Есть идея? Расскажите</span>
-      <span class="t-sr">Imate ideju? Recite nam</span>
-      <span class="t-en">Have an idea? Tell us</span>
-    </div>
-    <div class="cta-sub">
-      <span class="t-ru">За 15 минут покажем, как превратить её в работающий AI-продукт.</span>
-      <span class="t-sr">Za 15 minuta pokazaćemo kako je pretvoriti u radni AI proizvod.</span>
-      <span class="t-en">In 15 minutes we'll show how to turn it into a working AI product.</span>
-    </div>
+    <h2 class="cta-title">
+      <span class="t-ru">Начните внедрение AI‑напарников в своей компании</span>
+      <span class="t-sr">Započnite uvođenje AI saradnika u svojoj kompaniji</span>
+      <span class="t-en">Start adopting AI teammates in your company</span>
+    </h2>
     <a href="https://t.me/ishmakof" class="btn-primary">
-      <span class="t-ru">Написать в Telegram →</span>
-      <span class="t-sr">Pišite na Telegram →</span>
-      <span class="t-en">Write on Telegram →</span>
+      <span class="t-ru">Консультация</span>
+      <span class="t-sr">Konsultacija</span>
+      <span class="t-en">Consultation</span>
     </a>
-    <div class="cta-note">
-      <span class="t-ru">15 минут · бесплатно · без обязательств</span>
-      <span class="t-sr">15 minuta · besplatno · bez obaveza</span>
-      <span class="t-en">15 minutes · free · no obligations</span>
-    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-brand"><span class="t-ru">SELZIO · Студия ИИ продуктов</span><span class="t-sr">SELZIO · AI Product Studio</span><span class="t-en">SELZIO · AI Product Studio</span></div>
-    <div class="footer-info"><a href="mailto:selzioai@gmail.com">selzioai@gmail.com</a></div>
+    <div class="footer-brand"><span class="t-ru">SELZIO · Горизонтальное внедрение ИИ</span><span class="t-sr">SELZIO · Horizontalno uvođenje AI</span><span class="t-en">SELZIO · Horizontal AI adoption</span></div>
+    <div class="footer-info">
+      <a href="sites.html"><span class="t-ru">Разработка сайтов</span><span class="t-sr">Izrada sajtova</span><span class="t-en">Website development</span></a>
+      <a href="mailto:selzioai@gmail.com">selzioai@gmail.com</a>
+    </div>
   </div>
 </footer>
 
 <script>
-function toggleMenu() {
-  var menu = document.getElementById('mobileMenu');
-  var burger = document.querySelector('.burger');
-  menu.classList.toggle('open');
-  burger.classList.toggle('active');
-  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
-}
-function closeMenu() {
-  var menu = document.getElementById('mobileMenu');
-  var burger = document.querySelector('.burger');
-  menu.classList.remove('open');
-  burger.classList.remove('active');
-  document.body.style.overflow = '';
-}
-function toggleTheme() {
-  var current = document.documentElement.getAttribute('data-theme');
-  var next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-}
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang;
   localStorage.setItem('lang', lang);
+  var pageMeta = {
+    ru: {
+      title: 'Как внедрить ИИ в процессы компании — SELZIO',
+      description: 'Внедрение ИИ без ломки привычной работы через AI‑напарников сотрудников: команда улучшает процессы, а инструменты и знания остаются внутри компании.'
+    },
+    sr: {
+      title: 'Kako uvesti AI u procese kompanije — SELZIO',
+      description: 'Uvođenje AI bez narušavanja uobičajenog rada uz AI saradnike zaposlenih: tim unapređuje procese, dok alati i znanje ostaju unutar kompanije.'
+    },
+    en: {
+      title: 'How to adopt AI across company processes — SELZIO',
+      description: 'Adopt AI without disrupting familiar work through employee AI teammates: the team improves processes while tools and knowledge stay inside the company.'
+    }
+  };
+  document.title = pageMeta[lang].title;
+  document.querySelector('meta[name="description"]').setAttribute('content', pageMeta[lang].description);
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
-    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    var isActive = btn.textContent.trim().toLowerCase() === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
 }
 (function(){
@@ -2097,11 +1920,6 @@ function setLang(lang) {
   }
   setLang(saved);
 })();
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-  if (!localStorage.getItem('theme')) {
-    document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-  }
-});
 </script>
 <script>
 (function(){
@@ -2182,10 +2000,9 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', fun
     updateCamera(t);
     ctx.save();
     ctx.translate(W/2,H/2); ctx.scale(camZoom,camZoom); ctx.translate(-W/2+camX,-H/2+camY);
-    var isDark=document.documentElement.getAttribute('data-theme')==='dark';
     var nodeColor=cv('--gray-700'),nodeStroke=cv('--gray-500'),signalColor=cv('--black'),bgColor=cv('--bg');
-    var posEdge=isDark?'rgba(96,165,250,':'rgba(37,99,235,';
-    var negEdge=isDark?'rgba(248,113,113,':'rgba(220,38,38,';
+    var posEdge='rgba(37,99,235,';
+    var negEdge='rgba(220,38,38,';
     trainStep(t/1000); fireSignals(t/1000); _time=t/1000;
     for(var l=0;l<weights.length;l++) for(var i=0;i<weights[l].length;i++) for(var j=0;j<weights[l][i].length;j++){
       weights[l][i][j].w=lerp(weights[l][i][j].w,weights[l][i][j].targetW,0.004);
