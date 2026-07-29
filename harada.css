@@ -200,6 +200,7 @@ nav .container {
 
 .lang-switcher {
   padding-inline: 12px;
+  background: rgba(11, 39, 71, 0.2);
   border: 0;
   border-radius: 0;
 }
@@ -861,6 +862,91 @@ footer {
 footer .container { border-top: 1px solid rgba(255, 255, 255, 0.16); padding-top: 28px; }
 .footer-brand { color: #fff; font-family: "IBM Plex Mono", monospace; letter-spacing: 0.07em; }
 .footer-info a { color: var(--harada-orange); }
+
+/* Stable interaction system: hover never changes element geometry. */
+.whom-card,
+.process-step,
+.case-card,
+.pricing-card,
+.site-card,
+.get-card,
+.method-doc,
+.method-cat,
+.aim-mini-doc,
+.sites-more-btn {
+  transform: none;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.btn-primary,
+.pricing-btn,
+.nav-links a,
+.mobile-menu a,
+.lang-btn,
+.theme-toggle,
+.burger,
+.case-expand-toggle,
+.footer-info a {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+}
+
+.btn-primary:hover {
+  transform: none;
+  box-shadow: 12px 12px 0 rgba(255, 255, 255, 0.14);
+}
+
+.whom-card:hover {
+  transform: none;
+  box-shadow: inset 0 -7px 0 var(--harada-orange);
+}
+
+.site-card:hover {
+  transform: none;
+  box-shadow: inset 0 -7px 0 var(--harada-orange);
+}
+
+.pricing-btn:hover { transform: none; }
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--harada-orange);
+  outline-offset: 4px;
+}
+
+.nav-links a:focus-visible,
+.lang-btn:focus-visible,
+.theme-toggle:focus-visible,
+.burger:focus-visible {
+  position: relative;
+  z-index: 2;
+  outline-color: #fff;
+  outline-offset: -5px;
+}
+
+@media (hover: none) {
+  .whom-card:hover,
+  .case-card:hover,
+  .pricing-card:hover,
+  .site-card:hover,
+  .get-card:hover {
+    box-shadow: none;
+  }
+
+  .btn-primary:hover {
+    color: #fff;
+    background: var(--harada-orange);
+    border-color: var(--harada-orange);
+    box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.14);
+  }
+}
 
 @media (max-width: 1080px) {
   nav .container { grid-template-columns: 190px minmax(0, 1fr) auto; }
