@@ -1,0 +1,307 @@
+.selzio-agent[hidden],
+.selzio-agent-trigger[hidden],
+.selzio-agent-backdrop[hidden] {
+  display: none !important;
+}
+
+.selzio-agent-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(11, 39, 71, 0.22);
+  backdrop-filter: blur(2px);
+}
+
+.selzio-agent-trigger {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  padding: 0 20px;
+  color: #fff;
+  background: #153b67;
+  border: 1px solid #153b67;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font: 700 13px/1 "Manrope", sans-serif;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.selzio-agent-trigger:hover {
+  background: #0b2747;
+  border-color: #0b2747;
+  box-shadow: 8px 8px 0 rgba(11, 39, 71, 0.14);
+}
+
+.selzio-agent-trigger-dot,
+.selzio-agent-status-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  background: #f4a000;
+  border-radius: 50%;
+}
+
+section.selzio-agent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: min(430px, calc(100vw - 48px));
+  height: min(720px, calc(100dvh - 48px));
+  overflow: hidden;
+  color: #102f52;
+  background: #fffdf8;
+  border: 1px solid rgba(16, 47, 82, 0.18);
+  box-shadow: 0 26px 80px rgba(11, 39, 71, 0.24);
+  font-family: "Manrope", sans-serif;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0 !important;
+}
+
+.selzio-agent-header {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 12px;
+  min-height: 76px;
+  padding: 12px 14px 12px 18px;
+  background: #fffdf8;
+  border-bottom: 1px solid rgba(16, 47, 82, 0.17);
+}
+
+.selzio-agent-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  background: #153b67;
+  font: 700 16px/1 "IBM Plex Mono", monospace;
+}
+
+.selzio-agent-heading strong {
+  display: block;
+  color: #0b2747;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.selzio-agent-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 5px;
+  color: #657486;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.selzio-agent-status-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.selzio-agent-close {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: #153b67;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.selzio-agent-close:hover { background: rgba(21, 59, 103, 0.06); }
+
+.selzio-agent-body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px 20px 28px;
+  scrollbar-color: rgba(21, 59, 103, 0.24) transparent;
+}
+
+.selzio-agent-message {
+  max-width: 88%;
+  margin-top: 14px;
+  padding: 13px 15px;
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.selzio-agent-message:first-child { margin-top: 0; }
+.selzio-agent-message--assistant { color: #102f52; background: #edf5f6; }
+.selzio-agent-message--user { margin-left: auto; color: #fff; background: #153b67; }
+.selzio-agent-message--system { max-width: 100%; color: #657486; background: #fff3d6; font-size: 12px; }
+
+.selzio-agent-quick {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.selzio-agent-quick button,
+.selzio-agent-inline-action {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  color: #153b67;
+  background: #fffdf8;
+  border: 1px solid rgba(21, 59, 103, 0.24);
+  cursor: pointer;
+  font: 700 12px/1.3 "Manrope", sans-serif;
+  text-align: left;
+}
+
+.selzio-agent-quick button:hover,
+.selzio-agent-inline-action:hover {
+  color: #fff;
+  background: #153b67;
+  border-color: #153b67;
+}
+
+.selzio-agent-inline-action {
+  width: auto;
+  margin-top: 14px;
+  color: #fff;
+  background: #f4a000;
+  border-color: #f4a000;
+}
+
+.selzio-agent-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  min-width: 54px;
+}
+
+.selzio-agent-typing i {
+  width: 5px;
+  height: 5px;
+  background: #657486;
+  border-radius: 50%;
+  animation: selzio-agent-pulse 1s infinite ease-in-out;
+}
+
+.selzio-agent-typing i:nth-child(2) { animation-delay: 140ms; }
+.selzio-agent-typing i:nth-child(3) { animation-delay: 280ms; }
+
+@keyframes selzio-agent-pulse {
+  0%, 70%, 100% { opacity: .25; transform: translateY(0); }
+  35% { opacity: 1; transform: translateY(-2px); }
+}
+
+.selzio-agent-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 14px;
+  background: #fff;
+  border-top: 1px solid rgba(16, 47, 82, 0.17);
+}
+
+.selzio-agent-form textarea {
+  width: 100%;
+  min-height: 48px;
+  max-height: 116px;
+  resize: none;
+  padding: 13px 14px;
+  color: #102f52;
+  background: #fffdf8;
+  border: 1px solid rgba(16, 47, 82, 0.2);
+  border-radius: 0;
+  outline: none;
+  font: 500 14px/1.45 "Manrope", sans-serif;
+}
+
+.selzio-agent-form textarea:focus { border-color: #153b67; }
+
+.selzio-agent-send {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: #fff;
+  background: #153b67;
+  border: 1px solid #153b67;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.selzio-agent-send:hover { background: #f4a000; border-color: #f4a000; }
+.selzio-agent-send:disabled { opacity: .45; cursor: default; }
+
+.selzio-agent-booking {
+  display: grid;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 16px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid rgba(16, 47, 82, 0.17);
+}
+
+.selzio-agent-booking strong { color: #0b2747; font-size: 15px; }
+.selzio-agent-booking label { color: #657486; font-size: 11px; font-weight: 700; }
+.selzio-agent-booking input,
+.selzio-agent-booking textarea {
+  width: 100%;
+  padding: 11px 12px;
+  color: #102f52;
+  background: #fffdf8;
+  border: 1px solid rgba(16, 47, 82, 0.2);
+  border-radius: 0;
+  font: 500 13px/1.4 "Manrope", sans-serif;
+}
+
+.selzio-agent-booking textarea { min-height: 72px; resize: vertical; }
+.selzio-agent-booking button {
+  min-height: 46px;
+  margin-top: 4px;
+  color: #fff;
+  background: #153b67;
+  border: 1px solid #153b67;
+  cursor: pointer;
+  font: 700 12px/1 "Manrope", sans-serif;
+}
+
+.selzio-agent-booking button:hover { background: #f4a000; border-color: #f4a000; }
+.selzio-agent-booking button:disabled { opacity: .5; cursor: wait; }
+.selzio-agent-booking-note { color: #657486; font-size: 11px; line-height: 1.45; }
+.selzio-agent-telegram { color: #153b67; font-weight: 700; }
+
+@media (max-width: 600px) {
+  .selzio-agent-trigger { right: 16px; bottom: 16px; }
+  section.selzio-agent {
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+  }
+  .selzio-agent-backdrop { display: none; }
+  .selzio-agent-header { min-height: 68px; }
+  .selzio-agent-body { padding: 20px 16px 24px; }
+  .selzio-agent-form { padding: 12px; }
+  .selzio-agent-message { max-width: 92%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selzio-agent-typing i { animation: none; opacity: .55; }
+}

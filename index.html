@@ -722,6 +722,8 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 [data-lang="en"] .t-ru, [data-lang="en"] .t-sr { display: none; }
 </style>
 <link href="harada.css" rel="stylesheet">
+<link href="agent.css" rel="stylesheet">
+<script src="agent.js" defer></script>
 </head>
 <body>
 
@@ -730,9 +732,13 @@ footer .container { display: flex; justify-content: space-between; align-items: 
   <div class="container">
     <a class="logo-stack" href="./" aria-label="SELZIO — главная">
       <span class="logo-lockup" aria-hidden="true">
-        <img class="logo-wordmark" src="assets/selzio-wordmark-navy.png?v=2" alt="">
+        <img class="logo-wordmark" src="assets/logo.png?v=20260730-4" alt="">
       </span>
     </a>
+    <div class="service-nav" aria-label="Направления SELZIO">
+      <a class="active" href="index.html" aria-current="page"><span class="t-ru">ИИ Агенты</span><span class="t-sr">AI agenti</span><span class="t-en">AI Agents</span></a>
+      <a href="sites.html"><span class="t-ru">Вебсайты</span><span class="t-sr">Veb-sajtovi</span><span class="t-en">Websites</span></a>
+    </div>
     <div class="nav-controls">
       <div class="lang-switcher" aria-label="Language">
         <button type="button" class="lang-btn active" onclick="setLang(&#39;ru&#39;)" aria-label="Русский">RU</button>
@@ -763,10 +769,10 @@ footer .container { display: flex; justify-content: space-between; align-items: 
     </p>
 
     <div class="hero-actions">
-      <a href="https://t.me/ishmakof" class="btn-primary">
-        <span class="t-ru">Обсудить внедрение →</span>
-        <span class="t-sr">Razgovarajmo o uvođenju →</span>
-        <span class="t-en">Discuss adoption →</span>
+      <a href="#ai-teammate" class="btn-primary" data-agent-open>
+        <span class="t-ru">Поговорить с AI‑напарником →</span>
+        <span class="t-sr">Razgovarajte sa AI saradnikom →</span>
+        <span class="t-en">Talk to the AI teammate →</span>
       </a>
     </div>
   </div>
@@ -1861,10 +1867,10 @@ footer .container { display: flex; justify-content: space-between; align-items: 
       <span class="t-sr">Započnite uvođenje AI saradnika u svojoj kompaniji</span>
       <span class="t-en">Start adopting AI teammates in your company</span>
     </h2>
-    <a href="https://t.me/ishmakof" class="btn-primary">
-      <span class="t-ru">Консультация</span>
-      <span class="t-sr">Konsultacija</span>
-      <span class="t-en">Consultation</span>
+    <a href="#ai-teammate" class="btn-primary" data-agent-open>
+      <span class="t-ru">Поговорить с AI‑напарником</span>
+      <span class="t-sr">Razgovarajte sa AI saradnikom</span>
+      <span class="t-en">Talk to the AI teammate</span>
     </a>
   </div>
 </section>
