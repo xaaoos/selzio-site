@@ -1,3 +1,15 @@
+.selzio-agent,
+.selzio-agent-trigger,
+.selzio-agent-backdrop {
+  --agent-navy: #153b67;
+  --agent-navy-deep: #0b2747;
+  --agent-orange: #f4a000;
+  --agent-paper: #fffdf8;
+  --agent-cream: #fff8e8;
+  --agent-sky: #dceff3;
+  --agent-muted: #657486;
+}
+
 .selzio-agent[hidden],
 .selzio-agent-trigger[hidden],
 .selzio-agent-backdrop[hidden] {
@@ -28,7 +40,7 @@
   border-radius: 0;
   box-shadow: none;
   cursor: pointer;
-  font: 700 13px/1 "Manrope", sans-serif;
+  font: 700 13px/1 "Onest", sans-serif;
   transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
@@ -36,6 +48,10 @@
   background: #0b2747;
   border-color: #0b2747;
   box-shadow: 8px 8px 0 rgba(11, 39, 71, 0.14);
+}
+
+.ai-page .selzio-agent-trigger {
+  display: none !important;
 }
 
 .selzio-agent-trigger-dot,
@@ -57,11 +73,11 @@ section.selzio-agent {
   width: min(430px, calc(100vw - 48px));
   height: min(720px, calc(100dvh - 48px));
   overflow: hidden;
-  color: #102f52;
-  background: #fffdf8;
+  color: var(--agent-navy-deep);
+  background: var(--agent-paper);
   border: 1px solid rgba(16, 47, 82, 0.18);
   box-shadow: 0 26px 80px rgba(11, 39, 71, 0.24);
-  font-family: "Manrope", sans-serif;
+  font-family: "Onest", sans-serif;
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0 !important;
@@ -145,9 +161,9 @@ section.selzio-agent {
 }
 
 .selzio-agent-message:first-child { margin-top: 0; }
-.selzio-agent-message--assistant { color: #102f52; background: #edf5f6; }
-.selzio-agent-message--user { margin-left: auto; color: #fff; background: #153b67; }
-.selzio-agent-message--system { max-width: 100%; color: #657486; background: #fff3d6; font-size: 12px; }
+.selzio-agent-message--assistant { color: var(--agent-navy-deep); background: var(--agent-sky); }
+.selzio-agent-message--user { margin-left: auto; color: #fff; background: var(--agent-navy); }
+.selzio-agent-message--system { max-width: 100%; color: var(--agent-muted); background: var(--agent-cream); font-size: 12px; }
 
 .selzio-agent-quick {
   display: grid;
@@ -164,7 +180,7 @@ section.selzio-agent {
   background: #fffdf8;
   border: 1px solid rgba(21, 59, 103, 0.24);
   cursor: pointer;
-  font: 700 12px/1.3 "Manrope", sans-serif;
+  font: 700 12px/1.3 "Onest", sans-serif;
   text-align: left;
 }
 
@@ -212,7 +228,7 @@ section.selzio-agent {
   grid-template-columns: 1fr auto;
   gap: 10px;
   padding: 14px;
-  background: #fff;
+  background: var(--agent-paper);
   border-top: 1px solid rgba(16, 47, 82, 0.17);
 }
 
@@ -222,12 +238,12 @@ section.selzio-agent {
   max-height: 116px;
   resize: none;
   padding: 13px 14px;
-  color: #102f52;
-  background: #fffdf8;
+  color: var(--agent-navy-deep);
+  background: var(--agent-paper);
   border: 1px solid rgba(16, 47, 82, 0.2);
   border-radius: 0;
   outline: none;
-  font: 500 14px/1.45 "Manrope", sans-serif;
+  font: 500 14px/1.45 "Onest", sans-serif;
 }
 
 .selzio-agent-form textarea:focus { border-color: #153b67; }
@@ -252,7 +268,7 @@ section.selzio-agent {
   max-width: 100%;
   margin-top: 16px;
   padding: 18px;
-  background: #fff;
+  background: var(--agent-paper);
   border: 1px solid rgba(16, 47, 82, 0.17);
 }
 
@@ -262,11 +278,11 @@ section.selzio-agent {
 .selzio-agent-booking textarea {
   width: 100%;
   padding: 11px 12px;
-  color: #102f52;
-  background: #fffdf8;
+  color: var(--agent-navy-deep);
+  background: var(--agent-paper);
   border: 1px solid rgba(16, 47, 82, 0.2);
   border-radius: 0;
-  font: 500 13px/1.4 "Manrope", sans-serif;
+  font: 500 13px/1.4 "Onest", sans-serif;
 }
 
 .selzio-agent-booking textarea { min-height: 72px; resize: vertical; }
@@ -277,7 +293,7 @@ section.selzio-agent {
   background: #153b67;
   border: 1px solid #153b67;
   cursor: pointer;
-  font: 700 12px/1 "Manrope", sans-serif;
+  font: 700 12px/1 "Onest", sans-serif;
 }
 
 .selzio-agent-booking button:hover { background: #f4a000; border-color: #f4a000; }
@@ -286,7 +302,33 @@ section.selzio-agent {
 .selzio-agent-telegram { color: #153b67; font-weight: 700; }
 
 @media (max-width: 600px) {
-  .selzio-agent-trigger { right: 16px; bottom: 16px; }
+  .selzio-agent-trigger {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    padding: 0;
+    justify-content: center;
+    gap: 5px;
+  }
+  .selzio-agent-trigger::after {
+    content: "AI";
+    color: #fff;
+    font: 700 11px/1 "IBM Plex Mono", monospace;
+    letter-spacing: 0.06em;
+  }
+  .selzio-agent-trigger > span:last-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
   section.selzio-agent {
     inset: 0;
     width: 100%;

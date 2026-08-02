@@ -1,12 +1,17 @@
+/* Official SELZIO color system. */
 :root {
   --navy: #153b67;
   --navy-deep: #0b2747;
   --orange: #f4a000;
-  --cream: #f3eee3;
+  --cream: #fff8e8;
   --paper: #fffdf8;
-  --ink: #102f52;
+  --ink: var(--navy-deep);
   --muted: #657486;
-  --line: rgba(16, 47, 82, 0.17);
+  --sky: #dceff3;
+  --sun: #ffd36b;
+  --peach: #f6d7bd;
+  --violet: #5c4b9f;
+  --line: rgba(101, 116, 134, 0.32);
   --page-pad: clamp(24px, 5.5vw, 104px);
 }
 
@@ -17,7 +22,7 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background: var(--paper);
-  font-family: "Manrope", sans-serif;
+  font-family: "Onest", sans-serif;
   line-height: 1.65;
 }
 [hidden], .t-sr, .t-en { display: none !important; }
@@ -183,7 +188,7 @@ nav {
   color: var(--navy-deep);
   background:
     linear-gradient(90deg, rgba(255,253,248,.97) 0%, rgba(255,253,248,.88) 38%, rgba(255,253,248,.16) 70%),
-    url("assets/selzio-hero-websites-v1.webp") center / cover;
+    url("assets/selzio-editorial-websites-coral.webp") center / cover;
 }
 .eyebrow {
   margin-bottom: 18px;
@@ -232,7 +237,7 @@ section { padding: 112px 0; }
   color: #fff;
   background-color: var(--navy-deep);
   background-image:
-    linear-gradient(180deg, rgba(7,29,53,.86) 0%, rgba(7,29,53,.34) 56%, rgba(7,29,53,.9) 100%),
+    linear-gradient(180deg, rgba(11,39,71,.86) 0%, rgba(11,39,71,.34) 56%, rgba(11,39,71,.9) 100%),
     var(--site-preview);
   background-position: center top;
   background-size: cover;
@@ -257,7 +262,7 @@ section { padding: 112px 0; }
   margin-top: auto;
   padding: 6px 9px;
   color: #fff;
-  background: rgba(7,29,53,.82);
+  background: rgba(11,39,71,.82);
   border: 1px solid rgba(255,255,255,.3);
   font: 600 10px/1 "IBM Plex Mono", monospace;
   text-shadow: none;
@@ -270,11 +275,11 @@ section { padding: 112px 0; }
   flex-direction: column;
   padding: 46px 40px;
   color: var(--navy-deep);
-  background: #fff;
+  background: var(--paper);
   border-right: 1px solid var(--line);
 }
 .price-card:nth-child(2) { background: var(--cream); }
-.price-card.accent { color: #fff; background: var(--orange); }
+.price-card.accent { color: var(--navy-deep); background: var(--sun); }
 .price-title { font-size: 22px; font-weight: 800; }
 .price-desc { margin-top: 16px; opacity: .7; font-size: 14px; }
 .price { margin-top: auto; padding-top: 34px; font-size: 27px; font-weight: 800; }
@@ -311,7 +316,7 @@ footer a { color: inherit; }
   border: 1px solid var(--navy);
   box-shadow: none;
   transform: none;
-  font: 700 14px/1.2 "Manrope", sans-serif;
+  font: 700 14px/1.2 "Onest", sans-serif;
   letter-spacing: 0;
   text-transform: none;
   transition:
@@ -385,4 +390,72 @@ footer a { color: inherit; }
   .site-card { min-height: 270px; padding: 36px 28px; border-right: 0; }
   .price-card { padding: 40px 30px; }
   footer { align-items: flex-start; flex-direction: column; }
+}
+
+/* Bento geometry shared with the main product page: one gapless rectangular plane. */
+:root { --bento-gap: 0px; --bento-radius: 0px; }
+
+.sites-hero {
+  min-height: 590px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.sites-grid,
+.pricing-grid {
+  gap: var(--bento-gap);
+  background: transparent;
+  border: 0;
+}
+
+.site-card,
+.price-card {
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.site-card:last-child,
+.price-card:last-child { border-right: 0; }
+
+.process-row {
+  gap: var(--bento-gap);
+  background: transparent;
+  border: 0;
+}
+
+.process-row > * {
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.cta {
+  margin: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 680px) {
+  :root { --bento-gap: 0px; --bento-radius: 0px; }
+  .sites-hero,
+  .cta { margin-inline: 0; }
+}
+
+/* True raster grain; deliberately random rather than a geometric dot pattern. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  pointer-events: none;
+  background: url("assets/selzio-grain.png") 0 0 / 256px 256px repeat;
+  mix-blend-mode: overlay;
+  opacity: .16;
 }
