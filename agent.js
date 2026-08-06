@@ -133,11 +133,11 @@
   trigger.addEventListener('click', openAgent);
   backdrop.addEventListener('click', closeAgent);
   closeButton.addEventListener('click', closeAgent);
-  document.querySelectorAll('[data-agent-open]').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      openAgent();
-    });
+  document.addEventListener('click', function (event) {
+    var opener = event.target.closest('[data-agent-open]');
+    if (!opener || root.contains(opener)) return;
+    event.preventDefault();
+    openAgent();
   });
   form.addEventListener('submit', function (event) {
     event.preventDefault();
